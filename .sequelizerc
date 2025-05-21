@@ -1,0 +1,16 @@
+const dotenv = require("dotenv");
+
+if (process.env.NODE_ENV === "production") {
+  dotenv.config({ path: `${process.cwd()}/.env.production` });
+} else {
+  dotenv.config({ path: `${process.cwd()}/.env.development` });
+}
+
+const path = require("path");
+
+module.exports = {
+  config: path.resolve("app/config", "db.config.js"),
+  "models-path": path.resolve("app/db", "models"),
+  "seeders-path": path.resolve("app/db", "seeders"),
+  "migrations-path": path.resolve("app/db", "migrations"),
+};

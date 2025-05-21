@@ -1,0 +1,10 @@
+# modules
+node_modules
+
+# log
+app/logs/error.log
+
+# env
+.env
+.env.development
+.env.production
