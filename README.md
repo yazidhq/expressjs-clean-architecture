@@ -213,7 +213,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Yazid Dhiaulhaq Ismail — [GitHub](https://github.com/yazidhq)  
+Yazidhq — [GitHub](https://github.com/yazidhq)  
 Contact: [yazidhq00@gmail.com](mailto:yazidhq00@gmail.com)
 
 ---
