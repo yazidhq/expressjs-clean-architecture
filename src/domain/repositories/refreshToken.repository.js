@@ -1,31 +1,22 @@
-const db = require("../../infrastructure/database/models");
+class RefreshTokenRepository {
+  async create(refreshTokenEntity) {
+    throw new Error("Not implemented");
+  }
+  async findById(id) {
+    throw new Error("Not implemented");
+  }
+  async findAndCount(where, include, limit, offset) {
+    throw new Error("Not implemented");
+  }
+  async update(refreshTokenEntity, data) {
+    throw new Error("Not implemented");
+  }
+  async delete(refreshTokenEntity) {
+    throw new Error("Not implemented");
+  }
+  async findByToken(token) {
+    throw new Error("Not implemented");
+  }
+}
 
-const RefreshToken = db.refresh_token;
-
-exports.create = async (data) => {
-  return await RefreshToken.create(data);
-};
-
-exports.findAndCount = async (where, include, limit, offset) => {
-  return await RefreshToken.findAndCountAll({ where, include, limit, offset });
-};
-
-exports.findById = async (id) => {
-  return await RefreshToken.findOne({ where: { id } });
-};
-
-exports.update = async (refreshTokenInstance, data) => {
-  return await refreshTokenInstance.update(data);
-};
-
-exports.truncate = async () => {
-  return await RefreshToken.truncate();
-};
-
-exports.delete = async (refreshTokenInstance) => {
-  return await refreshTokenInstance.destroy();
-};
-
-exports.findByToken = async (token) => {
-  return await RefreshToken.findOne({ where: { token } });
-};
+module.exports = RefreshTokenRepository;

@@ -1,6 +1,10 @@
 const { catchAsync } = require("../../shared/utils/catchAsync.util");
 const helper = require("../../shared/utils/helper.util");
-const userUseCase = require("../../domain/usecases/user.usecase");
+const userUseCase = require("../../compositions/user.composition");
+const {
+  sendPaginated,
+  sendSuccess,
+} = require("../../shared/utils/response.util");
 
 exports.createUser = catchAsync(async (req, res, next) => {
   const data = req.body;

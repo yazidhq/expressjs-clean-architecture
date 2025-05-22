@@ -1,8 +1,9 @@
 const { catchAsync } = require("../../shared/utils/catchAsync.util");
-const authUseCase = require("../../domain/usecases/auth.usecase");
+const authUsecases = require("../../compositions/auth.composition");
+const times = require("../../shared/utils/times.util");
 
 exports.signUp = catchAsync(async (req, res, next) => {
-  const { result, accessToken, refreshToken } = await authUseCase.signUp(
+  const { result, accessToken, refreshToken } = await authUsecases.signUp(
     req.body
   );
 
@@ -10,7 +11,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: authUseCase.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.status(201).json({
@@ -21,13 +22,13 @@ exports.signUp = catchAsync(async (req, res, next) => {
 });
 
 exports.signIn = catchAsync(async (req, res, next) => {
-  const { accessToken, refreshToken } = await authUseCase.signIn(req.body);
+  const { accessToken, refreshToken } = await authUsecases.signIn(req.body);
 
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: authUseCase.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.status(200).json({
@@ -40,13 +41,13 @@ exports.refreshToken = catchAsync(async (req, res, next) => {
   const token = req.cookies.refreshToken;
 
   const { newAccessToken, newRefreshToken } =
-    await authUseCase.verifyRefreshToken(token);
+    await authUsecases.verifyRefreshToken(token);
 
   res.cookie("refreshToken", newRefreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: authUseCase.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.status(200).json({
@@ -58,7 +59,7 @@ exports.refreshToken = catchAsync(async (req, res, next) => {
 exports.logout = catchAsync(async (req, res, next) => {
   const token = req.cookies.refreshToken;
 
-  await authUseCase.logout(token);
+  await authUsecases.logout(token);
 
   res.clearCookie("refreshToken", {
     httpOnly: true,

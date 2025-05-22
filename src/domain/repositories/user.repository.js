@@ -1,38 +1,28 @@
-const { Op } = require("sequelize");
-const db = require("../../infrastructure/database/models");
+class UserRepository {
+  async create(userEntity) {
+    throw new Error("Not implemented");
+  }
+  async findById(id) {
+    throw new Error("Not implemented");
+  }
+  async findAndCount(where, include, limit, offset) {
+    throw new Error("Not implemented");
+  }
+  async update(userEntity, data) {
+    throw new Error("Not implemented");
+  }
+  async delete(userEntity) {
+    throw new Error("Not implemented");
+  }
+  async findByUsername(username) {
+    throw new Error("Not implemented");
+  }
+  async findByEmail(email) {
+    throw new Error("Not implemented");
+  }
+  async truncateNonSuperadmin() {
+    throw new Error("Not implemented");
+  }
+}
 
-const User = db.user;
-
-exports.create = async (data) => {
-  return await User.create(data);
-};
-
-exports.findAndCount = async (where, include, limit, offset) => {
-  return await User.findAndCountAll({ where, include, limit, offset });
-};
-
-exports.findById = async (id) => {
-  return await User.findOne({ where: { id } });
-};
-
-exports.update = async (userInstance, data) => {
-  return await userInstance.update(data);
-};
-
-exports.truncateNonSuperadmin = async () => {
-  return await User.destroy({
-    where: { role: { [Op.ne]: "superadmin" } },
-  });
-};
-
-exports.delete = async (userInstance) => {
-  return await userInstance.destroy();
-};
-
-exports.findByUsername = async (username) => {
-  return await User.findOne({ where: { username } });
-};
-
-exports.findByEmail = async (email) => {
-  return await User.findOne({ where: { email } });
-};
+module.exports = UserRepository;
