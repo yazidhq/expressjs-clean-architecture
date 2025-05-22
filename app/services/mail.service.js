@@ -4,7 +4,6 @@ const mailConfig = require("../config/mail.config");
 const transporter = nodemailer.createTransport({
   host: mailConfig.host,
   port: mailConfig.port,
-  secure: mailConfig.secure,
   auth: mailConfig.auth,
 });
 
