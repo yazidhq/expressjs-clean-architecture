@@ -217,3 +217,22 @@ Yazid Dhiaulhaq Ismail — [GitHub](https://github.com/yazidhq)
 Contact: [yazidhq00@gmail.com](mailto:yazidhq00@gmail.com)
 
 ---
+
+### 🚧 Coming Soon
+
+Features planned for future releases:
+
+| Feature                    | Description                                                          |
+| -------------------------- | ---------------------------------------------------------------------|
+| **Audit Logs**             | Record key actions/events in the system for tracking purposes.       |
+| **Session Management**     | Handle user sessions and authentication state.                       |
+| **Health Checks**          | Endpoint to monitor service status.                                  |
+| **Jobs / Queue**           | Background processing for async tasks.                               |
+| **Rate & Usage Analytics** | Track API usage and performance metrics.                             |
+| **WebSocket/Realtime**     | Enable real-time data via WebSocket or services like Pusher.         |
+| **Caching Layer**          | Use Redis or in-memory cache to improve performance.                 |
+| **Testing**                | Unit and integration tests for code reliability.                     |
+| **Code Linting & Hooks**   | Enforce code standards via linting and git hooks.                    |
+| **Containerization**       | Docker support for consistent environments.                          |
+| **CI/CD**                  | Automated build, test, and deployment pipelines.                     |
+| **API Versioning**         | Manage and maintain multiple API versions.                           |
