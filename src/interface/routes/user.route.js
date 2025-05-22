@@ -2,7 +2,7 @@
  * @swagger
  * tags:
  *   name: Users
- *   description: Manajemen pengguna
+ *   description: User Managements
  */
 
 const {
