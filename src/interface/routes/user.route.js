@@ -74,10 +74,28 @@ router
    * @swagger
    * /api/user/:
    *   get:
-   *     summary: Get all user
+   *     summary: Get all users
    *     tags: [Users]
    *     security:
    *       - bearerAuth: []
+   *     parameters:
+   *       - in: query
+   *         name: page
+   *         schema:
+   *           type: integer
+   *           default: 1
+   *         description: Page number for pagination
+   *       - in: query
+   *         name: size
+   *         schema:
+   *           type: integer
+   *           default: 10
+   *         description: Number of users per page
+   *       - in: query
+   *         name: filter
+   *         schema:
+   *           type: string
+   *         description: Filter string for searching users (JSON)
    *     responses:
    *       200:
    *         description: User lists
