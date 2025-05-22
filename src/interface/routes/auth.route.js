@@ -82,8 +82,10 @@ router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp);
  *             properties:
  *               email:
  *                 type: string
+ *                 example: michael@mail.com
  *               password:
  *                 type: string
+ *                 example: 12345678
  *     responses:
  *       200:
  *         description: Login berhasil
