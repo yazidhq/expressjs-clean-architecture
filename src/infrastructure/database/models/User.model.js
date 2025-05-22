@@ -30,7 +30,6 @@ module.exports = (sequelize) => {
           notEmpty: { msg: "Username cannot be empty" },
         },
       },
-
       email: {
         type: DataTypes.STRING,
         allowNull: false,
