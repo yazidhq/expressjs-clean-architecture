@@ -14,10 +14,18 @@ module.exports = (sequelize) => {
       token: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          notNull: { msg: "Token cannot be null" },
+          notEmpty: { msg: "Token cannot be empty" },
+        },
       },
       userId: {
         type: DataTypes.UUID,
         allowNull: false,
+        validate: {
+          notNull: { msg: "userId cannot be null" },
+          notEmpty: { msg: "userId cannot be empty" },
+        },
       },
       expiresAt: {
         type: DataTypes.DATE,
