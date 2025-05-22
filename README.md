@@ -86,29 +86,29 @@ This boilerplate is designed with a modular structure, environment configuration
 ```
 expressjs-boilerplate/
 │
-├── public/                # Static files
-└── src/                   # Source files
-    ├── compositions/      # Composition logic
-    ├── domain/            # Domain layer (entities, repositories, usecases)
-    │   ├── entities/      # Core business entities
+├── public/                 # Static files
+└── src/                    # Source files
+    ├── compositions/       # Composition logic
+    ├── domain/             # Domain layer (entities, repositories, usecases)
+    │   ├── entities/       # Core business entities
     │   ├── repositories/   # Data access logic
-    │   └── usecases/      # Business logic use cases
-    ├── infrastructure/    # Infrastructure layer (config, database, repositories, services)
-    │   ├── config/        # Configuration files
-    │   ├── database/      # Database management
+    │   └── usecases/       # Business logic use cases
+    ├── infrastructure/     # Infrastructure layer (config, database, repositories, services)
+    │   ├── config/         # Configuration files
+    │   ├── database/       # Database management
     │   │   ├── migrations/ # Database migrations
     │   │   ├── models/     # Sequelize models
     │   │   └── seeders/    # Database seeders
     │   ├── repositories/   # Repository implementations
-    │   └── services/      # Service layer for business logic
-    ├── interface/         # Interface layer (controllers, middleware, routes, validators)
-    │   ├── controllers/   # Request handling logic
-    │   ├── middleware/    # Custom middleware
-    │   ├── routes/        # API route definitions
+    │   └── services/       # Service layer for business logic
+    ├── interface/          # Interface layer (controllers, middleware, routes, validators)
+    │   ├── controllers/    # Request handling logic
+    │   ├── middleware/     # Custom middleware
+    │   ├── routes/         # API route definitions
     │   └── validators/     # Request data validation
-    ├── logs/              # Application logs
-    └── shared/            # Shared utilities
-        └── utils/         # Utility functions
+    ├── logs/               # Application logs
+    └── shared/             # Shared utilities
+        └── utils/          # Utility functions
 ```
 
 ---
