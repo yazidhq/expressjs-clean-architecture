@@ -3,7 +3,7 @@ const AppError = require("../../shared/utils/appError.util");
 const { catchAsync } = require("../../shared/utils/catchAsync.util");
 const db = require("../../infrastructure/database/models");
 
-const User = db.User;
+const User = db.user;
 
 const authentication = catchAsync(async (req, res, next) => {
   let token = "";
