@@ -54,7 +54,6 @@ This boilerplate is designed with a modular structure, environment configuration
 
    ```bash
    cp .env.example .env
-   # Edit .env to set your environment variables
    ```
 
 5. Similarly for development or production:
