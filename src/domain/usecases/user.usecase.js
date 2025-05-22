@@ -1,14 +1,14 @@
 const AppError = require("../../shared/utils/appError.util");
-const userRepo = require("../repositories/user.repository");
+const userRepository = require("../repositories/user.repository");
 
 exports.createUser = async (data) => {
-  const created = await userRepo.create(data);
+  const created = await userRepository.create(data);
   if (!created) throw new AppError("Failed to create the user", 400);
   return created;
 };
 
 exports.getUsers = async (where, include, limit, offset) => {
-  const { rows, count } = await userRepo.findAndCount(
+  const { rows, count } = await userRepository.findAndCount(
     where,
     include,
     limit,
@@ -19,32 +19,32 @@ exports.getUsers = async (where, include, limit, offset) => {
 };
 
 exports.getUserById = async (id) => {
-  const foundUser = await userRepo.findById(id);
+  const foundUser = await userRepository.findById(id);
   if (!foundUser) throw new AppError("Invalid user id", 400);
   return foundUser;
 };
 
 exports.updateUser = async (id, data) => {
-  const foundUser = await userRepo.findById(id);
+  const foundUser = await userRepository.findById(id);
   if (!foundUser) throw new AppError("Invalid user id", 400);
 
-  const updated = await userRepo.update(foundUser, data);
+  const updated = await userRepository.update(foundUser, data);
   if (!updated) throw new AppError("Failed to update the user", 400);
 
   return updated;
 };
 
 exports.truncateUsers = async () => {
-  const truncated = await userRepo.truncateNonSuperadmin();
+  const truncated = await userRepository.truncateNonSuperadmin();
   if (!truncated) throw new AppError("Failed to truncate users", 400);
   return truncated;
 };
 
 exports.deleteUser = async (id) => {
-  const foundUser = await userRepo.findById(id);
+  const foundUser = await userRepository.findById(id);
   if (!foundUser) throw new AppError("Invalid user id", 400);
 
-  const deleted = await userRepo.delete(foundUser);
+  const deleted = await userRepository.delete(foundUser);
   if (!deleted) throw new AppError("Failed to delete the user", 400);
 
   return deleted;

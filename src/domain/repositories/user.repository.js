@@ -28,3 +28,11 @@ exports.truncateNonSuperadmin = async () => {
 exports.delete = async (userInstance) => {
   return await userInstance.destroy();
 };
+
+exports.findByUsername = async (username) => {
+  return await User.findOne({ where: { username } });
+};
+
+exports.findByEmail = async (email) => {
+  return await User.findOne({ where: { email } });
+};

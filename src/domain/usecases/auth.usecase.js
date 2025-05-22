@@ -1,9 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const db = require("../../infrastructure/database/models");
-
-const User = db.user;
-const RefreshToken = db.refresh_token;
+const userRepository = require("../repositories/user.repository");
+const refreshTokenRepository = require("../repositories/refreshToken.repository");
 
 const createAccessToken = (payload) => {
   return jwt.sign(payload, process.env.JWT_SECRET_KEY, {
@@ -38,7 +36,8 @@ const saveRefreshToken = async (userId, token) => {
   const expiresAt = new Date(
     Date.now() + parseExpires(process.env.JWT_REFRESH_EXPIRES_IN)
   );
-  await RefreshToken.create({
+
+  await refreshTokenRepository.create({
     userId,
     token,
     expiresAt,
@@ -50,12 +49,12 @@ const signUp = async ({ role, username, email, password, confirmPassword }) => {
     throw new Error("Invalid user type");
   }
 
-  const usernameExists = await User.findOne({ where: { username } });
-  if (usernameExists) {
+  const userExists = await userRepository.findByUsername(username);
+  if (userExists) {
     throw new Error("Username already taken");
   }
 
-  const emailExists = await User.findOne({ where: { email } });
+  const emailExists = await userRepository.findByEmail(email);
   if (emailExists) {
     throw new Error("Email already registered");
   }
@@ -64,7 +63,7 @@ const signUp = async ({ role, username, email, password, confirmPassword }) => {
     throw new Error("Passwords do not match");
   }
 
-  const user = await User.create({
+  const user = await userRepository.create({
     role,
     username,
     email,
@@ -89,7 +88,7 @@ const signIn = async ({ email, password }) => {
     throw new Error("Please provide email and password");
   }
 
-  const user = await User.findOne({ where: { email } });
+  const user = await userRepository.findByEmail(email);
   if (!user || !(await bcrypt.compare(password, user.password))) {
     throw new Error("Incorrect email or password");
   }
@@ -105,7 +104,7 @@ const signIn = async ({ email, password }) => {
 const verifyRefreshToken = async (token) => {
   if (!token) throw new Error("Refresh token required");
 
-  const storedToken = await RefreshToken.findOne({ where: { token } });
+  const storedToken = await refreshTokenRepository.findByToken(token);
   if (!storedToken || storedToken.expiresAt < new Date()) {
     throw new Error("Token expired or not found");
   }
@@ -117,7 +116,7 @@ const verifyRefreshToken = async (token) => {
     throw new Error("Invalid refresh token");
   }
 
-  const user = await User.findByPk(decoded.id);
+  const user = await userRepository.findById(decoded.id);
   if (!user) throw new Error("User not found");
 
   await storedToken.destroy();
@@ -132,7 +131,8 @@ const verifyRefreshToken = async (token) => {
 
 const logout = async (token) => {
   if (token) {
-    await RefreshToken.destroy({ where: { token } });
+    const token = await refreshTokenRepository.findByToken(token);
+    await token.destroy();
   }
 };
 
