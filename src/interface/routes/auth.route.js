@@ -68,7 +68,7 @@ router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp);
  * @swagger
  * /api/auth/sign-in:
  *   post:
- *     summary: Sign In
+ *     summary: Sign in
  *     tags: [Auth]
  *     requestBody:
  *       required: true
@@ -112,7 +112,7 @@ router.route(`${base_url}/refresh-token`).post(limiter, refreshToken);
  * @swagger
  * /api/auth/logout:
  *   post:
- *     summary: Sign Out
+ *     summary: Sign out
  *     tags: [Auth]
  *     responses:
  *       200:
