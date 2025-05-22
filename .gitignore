@@ -8,6 +8,3 @@ src/logs/error.log
 .env
 .env.development
 .env.production
-
-# README.md
-README.md

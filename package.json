@@ -7,7 +7,7 @@
     "start:dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yazidhq",
   "license": "ISC",
   "description": "",
   "dependencies": {
