@@ -1,7 +1,7 @@
 "use strict";
 const { DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
-const AppError = require("../../utils/appError.util");
+const AppError = require("../../../utils/appError.util");
 
 module.exports = (sequelize) => {
   const User = sequelize.define(

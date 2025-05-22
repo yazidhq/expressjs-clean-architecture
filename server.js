@@ -6,9 +6,9 @@ if (process.env.NODE_ENV === "production") {
   dotenv.config({ path: `${process.cwd()}/.env.development` });
 }
 
-const app = require("./app");
-const { logger } = require("./app/utils/logger.util");
-const { sequelize } = require("./app/config/database");
+const app = require("./src/app");
+const { logger } = require("./src/shared/utils/logger.util");
+const { sequelize } = require("./src/infrastructure/config/database");
 
 const PORT = process.env.APP_PORT || 3000;
 

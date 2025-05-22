@@ -6,12 +6,12 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const { glob } = require("glob");
 
-const corsOption = require("./app/middleware/cors.middleware");
-const sanitizeGlobal = require("./app/middleware/sanitize.middleware");
-const { logger } = require("./app/utils/logger.util");
-const AppError = require("./app/utils/appError.util");
-const { catchAsync } = require("./app/utils/catchAsync.util");
-const globalErrorHandler = require("./app/middleware/error.middleware");
+const corsOption = require("./interface/middleware/cors.middleware");
+const sanitizeGlobal = require("./interface/middleware/sanitize.middleware");
+const globalErrorHandler = require("./interface/middleware/error.middleware");
+const { logger } = require("./shared/utils/logger.util");
+const AppError = require("./shared/utils/appError.util");
+const { catchAsync } = require("./shared/utils/catchAsync.util");
 
 const app = express();
 

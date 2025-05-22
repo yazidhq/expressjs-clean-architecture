@@ -10,7 +10,7 @@ const {
 const {
   authentication,
   restrictTo,
-} = require("../middleware/authentication.middleware");
+} = require("../../middleware/authentication.middleware");
 
 const router = require("express").Router();
 const base_url = "/api/user";

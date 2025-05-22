@@ -1,4 +1,4 @@
-const AppError = require("../utils/appError.util");
+const AppError = require("../../shared/utils/appError.util");
 
 const sendErrorDev = (err, res) => {
   const statusCode = err.statusCode || 500;

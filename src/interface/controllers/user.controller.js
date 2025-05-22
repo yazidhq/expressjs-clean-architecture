@@ -1,6 +1,6 @@
-const { catchAsync } = require("../utils/catchAsync.util");
-const helper = require("../utils/helper.util");
-const userService = require("../services/user.service");
+const { catchAsync } = require("../../shared/utils/catchAsync.util");
+const helper = require("../../shared/utils/helper.util");
+const userService = require("../../services/user.service");
 
 exports.createUser = catchAsync(async (req, res, next) => {
   const data = req.body;
