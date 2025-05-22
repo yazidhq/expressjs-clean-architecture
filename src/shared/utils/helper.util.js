@@ -30,21 +30,70 @@ exports.buildFilter = (filterJSON) => {
     }
   }
 
-  const where = {};
   const includeMap = {};
-
-  for (const [key, value] of Object.entries(filterObj)) {
-    if (value === undefined || value === null || value === "") continue;
-
-    if (key.includes(".")) {
-      const [relation, ...rest] = key.split(".");
-      const col = rest.join(".");
-      if (!includeMap[relation]) includeMap[relation] = {};
-      includeMap[relation][col] = { [Op.like]: `%${value}%` };
+  const parseCondition = (key, value) => {
+    if (typeof value === "object" && !Array.isArray(value)) {
+      const condition = {};
+      for (const [opKey, opValue] of Object.entries(value)) {
+        switch (opKey) {
+          case "eq":
+            condition[Op.eq] = opValue;
+            break;
+          case "ne":
+            condition[Op.ne] = opValue;
+            break;
+          case "gt":
+            condition[Op.gt] = opValue;
+            break;
+          case "gte":
+            condition[Op.gte] = opValue;
+            break;
+          case "lt":
+            condition[Op.lt] = opValue;
+            break;
+          case "lte":
+            condition[Op.lte] = opValue;
+            break;
+          case "like":
+            condition[Op.like] = `%${opValue}%`;
+            break;
+          case "in":
+            condition[Op.in] = Array.isArray(opValue) ? opValue : [opValue];
+            break;
+          default:
+            throw new Error(`Unsupported operator: ${opKey}`);
+        }
+      }
+      return condition;
     } else {
-      where[key] = { [Op.like]: `%${value}%` };
+      return { [Op.like]: `%${value}%` };
     }
-  }
+  };
+
+  const parseWhere = (obj) => {
+    const result = {};
+
+    for (const [key, value] of Object.entries(obj)) {
+      if (value === undefined || value === null || value === "") continue;
+
+      if (key.toLowerCase() === "or" && Array.isArray(value)) {
+        result[Op.or] = value.map((item) => parseWhere(item));
+      } else if (key.includes(".")) {
+        const [relation, ...rest] = key.split(".");
+        const col = rest.join(".");
+        if (!includeMap[relation]) includeMap[relation] = {};
+        Object.assign(includeMap[relation], {
+          [col]: parseCondition(col, value),
+        });
+      } else {
+        result[key] = parseCondition(key, value);
+      }
+    }
+
+    return result;
+  };
+
+  const finalWhere = parseWhere(filterObj);
 
   const include = Object.entries(includeMap).map(([relation, relWhere]) => ({
     association: relation,
@@ -52,5 +101,5 @@ exports.buildFilter = (filterJSON) => {
     required: true,
   }));
 
-  return { where, include };
+  return { where: finalWhere, include };
 };
