@@ -1,0 +1,696 @@
+[2025-05-22T04:38:09.089Z] info: Server running in development mode at http://localhost
+[2025-05-22T04:38:09.148Z] info: Database synced with alter
+[2025-05-22T09:09:36.644Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:09:36.710Z] error: Failed to sync database:
+[2025-05-22T09:09:56.389Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:09:56.453Z] error: Failed to sync database:
+[2025-05-22T09:10:08.685Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:10:08.737Z] error: Failed to sync database:
+[2025-05-22T09:10:12.571Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:10:12.624Z] error: Failed to sync database:
+[2025-05-22T09:12:06.723Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:12:06.773Z] error: Failed to sync database:
+[2025-05-22T09:12:13.713Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:12:13.766Z] error: Failed to sync database:
+[2025-05-22T09:12:16.675Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:12:16.727Z] error: Failed to sync database:
+[2025-05-22T09:12:22.923Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:12:23.010Z] error: Failed to sync database:
+[2025-05-22T09:12:43.544Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:12:43.609Z] error: Failed to sync database:
+[2025-05-22T09:12:49.201Z] info: GET / - 200
+[2025-05-22T09:12:50.674Z] warn: Can't find /favicon.ico on this server
+[2025-05-22T09:12:50.685Z] info: GET /favicon.ico - 404
+[2025-05-22T09:12:57.268Z] info: GET /api-docs - 301
+[2025-05-22T09:12:57.287Z] info: GET /api-docs/ - 200
+[2025-05-22T09:12:57.365Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:12:57.388Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:12:57.418Z] info: GET /api-docs/swagger-ui.css - 200
+[2025-05-22T09:12:57.548Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 200
+[2025-05-22T09:12:57.581Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 200
+[2025-05-22T09:12:57.621Z] info: GET /api-docs/swagger-ui-bundle.js - 200
+[2025-05-22T09:12:58.142Z] info: GET /api-docs/favicon-32x32.png - 200
+[2025-05-22T09:12:58.372Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:12:59.128Z] info: GET /api-docs/swagger-ui-bundle.js - 200
+[2025-05-22T09:13:05.653Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:13:05.701Z] error: Failed to sync database:
+[2025-05-22T09:13:13.723Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:13:13.799Z] info: GET /api-docs/ - 304
+[2025-05-22T09:13:13.805Z] error: Failed to sync database:
+[2025-05-22T09:13:13.827Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:13:13.840Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:13:13.850Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:13:13.860Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:13:13.866Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:13:13.871Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:13:13.891Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:13:14.479Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:13:14.573Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:13:31.633Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:13:31.686Z] error: Failed to sync database:
+[2025-05-22T09:13:31.760Z] info: GET /api-docs/ - 304
+[2025-05-22T09:13:31.815Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:13:31.818Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:13:31.820Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:13:31.827Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:13:31.837Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:13:31.842Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:13:31.852Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:13:32.214Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:13:32.280Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:13:38.261Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:13:38.341Z] info: GET /api-docs/ - 304
+[2025-05-22T09:13:38.348Z] error: Failed to sync database:
+[2025-05-22T09:13:38.371Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:13:38.392Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:13:38.396Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:13:38.404Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:13:38.410Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:13:38.414Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:13:38.421Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:13:38.762Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:13:38.826Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:14:24.732Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:14:24.827Z] info: GET /api-docs/ - 304
+[2025-05-22T09:14:24.839Z] error: Failed to sync database:
+[2025-05-22T09:14:24.882Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:14:24.887Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:14:24.897Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:14:24.909Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:14:24.917Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:14:24.921Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:14:24.963Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:14:25.309Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:14:25.379Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:15:15.986Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:15:16.035Z] error: Failed to sync database:
+[2025-05-22T09:15:59.252Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:15:59.305Z] error: Failed to sync database:
+[2025-05-22T09:15:59.512Z] info: GET /api-docs/ - 304
+[2025-05-22T09:15:59.550Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:15:59.553Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:15:59.568Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:15:59.576Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:15:59.803Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:15:59.805Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:15:59.807Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:15:59.993Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:00.071Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:07.570Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:16:07.656Z] info: GET /api-docs/ - 304
+[2025-05-22T09:16:07.661Z] error: Failed to sync database:
+[2025-05-22T09:16:07.734Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:16:07.740Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:16:07.742Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:16:07.760Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:16:07.763Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:16:08.335Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:16:08.442Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:08.542Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:14.185Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:16:14.242Z] error: Failed to sync database:
+[2025-05-22T09:16:16.431Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:16:16.488Z] error: Failed to sync database:
+[2025-05-22T09:16:16.540Z] info: GET /api-docs/ - 304
+[2025-05-22T09:16:16.572Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:16:16.593Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:16:16.603Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:16:16.611Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:16:16.618Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:16:16.628Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:16:16.971Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:17.040Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:24.339Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:16:24.430Z] info: GET /api-docs/ - 304
+[2025-05-22T09:16:24.441Z] error: Failed to sync database:
+[2025-05-22T09:16:24.462Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:16:24.473Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:16:24.486Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:16:24.490Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:16:24.505Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:16:25.020Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:25.145Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:54.701Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:16:54.749Z] error: Failed to sync database:
+[2025-05-22T09:16:55.435Z] info: GET /api-docs/ - 304
+[2025-05-22T09:16:55.463Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:16:55.475Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:16:55.479Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:16:55.492Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:16:55.945Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:16:56.025Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:17:06.396Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:17:06.446Z] error: Failed to sync database:
+[2025-05-22T09:17:38.446Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:17:38.505Z] error: Failed to sync database:
+[2025-05-22T09:17:41.107Z] info: GET /api-docs/ - 304
+[2025-05-22T09:17:41.182Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:17:41.185Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:17:41.188Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:17:41.200Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:17:41.737Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:17:41.820Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:17:52.771Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:17:52.815Z] error: Failed to sync database:
+[2025-05-22T09:17:52.953Z] info: GET /api-docs/ - 304
+[2025-05-22T09:17:52.982Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:17:52.990Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:17:52.995Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:17:52.998Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:17:53.345Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:17:53.459Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:17:58.011Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:17:58.081Z] info: GET /api-docs/ - 304
+[2025-05-22T09:17:58.087Z] error: Failed to sync database:
+[2025-05-22T09:17:58.120Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:17:58.130Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:17:58.134Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:17:58.148Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:17:58.515Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:17:58.591Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:19:41.514Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:19:41.563Z] error: Failed to sync database:
+[2025-05-22T09:19:44.323Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:19:44.387Z] error: Failed to sync database:
+[2025-05-22T09:20:12.738Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:20:12.784Z] error: Failed to sync database:
+[2025-05-22T09:20:14.425Z] info: GET /api-docs/ - 304
+[2025-05-22T09:20:14.460Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:20:14.477Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:20:14.482Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:20:14.486Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:20:14.939Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:20:15.018Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:20:21.771Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:20:21.820Z] error: Failed to sync database:
+[2025-05-22T09:20:56.340Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:20:56.394Z] error: Failed to sync database:
+[2025-05-22T09:20:56.898Z] info: GET /api-docs/ - 304
+[2025-05-22T09:20:56.939Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:20:56.947Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:20:56.951Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:20:56.953Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:20:57.421Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:20:57.498Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:02.778Z] info: GET /api-docs/ - 304
+[2025-05-22T09:21:02.840Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:21:02.842Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:21:02.850Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:21:02.857Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:21:03.258Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:07.706Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:21:07.762Z] error: Failed to sync database:
+[2025-05-22T09:21:07.910Z] info: GET /api-docs/ - 304
+[2025-05-22T09:21:07.945Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:21:07.949Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:21:07.951Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:21:08.665Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:21:08.765Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:08.882Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:16.808Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:21:16.883Z] info: GET /api-docs/ - 304
+[2025-05-22T09:21:16.890Z] error: Failed to sync database:
+[2025-05-22T09:21:16.913Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:21:16.923Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:21:16.932Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:21:16.940Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:21:17.307Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:17.405Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:33.598Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:21:33.653Z] error: Failed to sync database:
+[2025-05-22T09:21:33.683Z] info: GET /api-docs/ - 304
+[2025-05-22T09:21:33.723Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:21:33.731Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:21:33.739Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:21:33.746Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:21:34.114Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:34.240Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:35.282Z] info: GET /api-docs/ - 304
+[2025-05-22T09:21:35.333Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:21:35.350Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:21:35.353Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:21:35.356Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:21:35.702Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:21:45.809Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:21:45.868Z] error: Failed to sync database:
+[2025-05-22T09:23:08.875Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:23:08.923Z] error: Failed to sync database:
+[2025-05-22T09:23:15.902Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:23:15.949Z] error: Failed to sync database:
+[2025-05-22T09:23:22.527Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:23:22.587Z] error: Failed to sync database:
+[2025-05-22T09:23:37.905Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:23:37.952Z] error: Failed to sync database:
+[2025-05-22T09:23:51.291Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:23:51.347Z] error: Failed to sync database:
+[2025-05-22T09:23:55.661Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:23:55.723Z] error: Failed to sync database:
+[2025-05-22T09:23:58.604Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:23:58.660Z] error: Failed to sync database:
+[2025-05-22T09:24:31.700Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:24:31.747Z] error: Failed to sync database:
+[2025-05-22T09:24:34.109Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:24:34.157Z] error: Failed to sync database:
+[2025-05-22T09:24:54.499Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:24:54.544Z] error: Failed to sync database:
+[2025-05-22T09:24:59.981Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:25:00.033Z] error: Failed to sync database:
+[2025-05-22T09:25:06.997Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:25:07.045Z] error: Failed to sync database:
+[2025-05-22T09:25:21.324Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:25:21.376Z] error: Failed to sync database:
+[2025-05-22T09:25:51.139Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:25:51.193Z] error: Failed to sync database:
+[2025-05-22T09:25:56.081Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:25:56.130Z] error: Failed to sync database:
+[2025-05-22T09:26:12.699Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:26:12.742Z] error: Failed to sync database:
+[2025-05-22T09:27:25.972Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:27:26.043Z] info: GET /api-docs/ - 304
+[2025-05-22T09:27:26.049Z] error: Failed to sync database:
+[2025-05-22T09:27:26.078Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:27:26.085Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:27:26.087Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:27:26.101Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:27:26.535Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:27:26.624Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:27:54.188Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:27:54.255Z] error: Failed to sync database:
+[2025-05-22T09:27:54.264Z] info: GET /api-docs/ - 304
+[2025-05-22T09:27:54.293Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:27:54.308Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:27:54.311Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:27:54.325Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:27:54.751Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:27:54.892Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:28:33.155Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:28:33.162Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:28:46.793Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:28:46.845Z] error: Failed to sync database:
+[2025-05-22T09:28:52.850Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:28:52.864Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:29:19.969Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:29:20.021Z] error: Failed to sync database:
+[2025-05-22T09:29:33.878Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:29:33.933Z] error: Failed to sync database:
+[2025-05-22T09:29:35.891Z] info: GET /api-docs/ - 304
+[2025-05-22T09:29:35.952Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:29:35.968Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:29:35.971Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:29:35.974Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:29:36.483Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:29:36.635Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:29:39.959Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:29:39.968Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:31:06.768Z] info: GET /api-docs/ - 304
+[2025-05-22T09:31:06.834Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:31:06.888Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:31:06.893Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:31:06.896Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:31:07.428Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:31:07.565Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:31:10.386Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:31:10.390Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:33:26.768Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:33:26.820Z] error: Failed to sync database:
+[2025-05-22T09:33:37.198Z] info: GET /api-docs/ - 304
+[2025-05-22T09:33:37.248Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:33:37.254Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:33:37.259Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:33:37.263Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:33:37.784Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:33:37.938Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:33:40.247Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:33:40.258Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:35:26.394Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:35:26.447Z] error: Failed to sync database:
+[2025-05-22T09:35:45.418Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:35:45.791Z] info: Database synced with alter
+[2025-05-22T09:35:50.530Z] info: GET /api-docs/ - 304
+[2025-05-22T09:35:50.583Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:35:50.597Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:35:50.601Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:35:50.603Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:35:51.170Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:35:51.360Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:35:54.610Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:35:54.620Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:36:53.365Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:36:53.493Z] info: Database synced with alter
+[2025-05-22T09:36:56.427Z] info: GET / - 200
+[2025-05-22T09:36:56.498Z] info: GET /swagger-ui-init.js - 200
+[2025-05-22T09:36:56.510Z] info: GET /swagger-ui.css - 200
+[2025-05-22T09:36:56.527Z] info: GET /swagger-ui-standalone-preset.js - 200
+[2025-05-22T09:36:56.590Z] info: GET /swagger-ui-bundle.js - 200
+[2025-05-22T09:36:57.261Z] info: GET /favicon-32x32.png - 200
+[2025-05-22T09:36:57.506Z] info: GET /favicon-32x32.png - 304
+[2025-05-22T09:37:10.429Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:37:10.553Z] info: Database synced with alter
+[2025-05-22T09:37:11.029Z] info: GET / - 304
+[2025-05-22T09:37:11.056Z] info: GET /swagger-ui.css - 304
+[2025-05-22T09:37:11.064Z] info: GET /swagger-ui-init.js - 304
+[2025-05-22T09:37:11.068Z] info: GET /swagger-ui-bundle.js - 304
+[2025-05-22T09:37:11.073Z] info: GET /swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:37:11.925Z] info: GET /favicon-32x32.png - 304
+[2025-05-22T09:37:12.024Z] info: GET /favicon-32x32.png - 304
+[2025-05-22T09:37:15.007Z] info: POST /api/auth/sign-up - 200
+[2025-05-22T09:38:55.898Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:38:55.999Z] info: Database synced with alter
+[2025-05-22T09:40:10.121Z] info: GET / - 304
+[2025-05-22T09:40:10.158Z] info: GET /swagger-ui.css - 304
+[2025-05-22T09:40:10.174Z] info: GET /swagger-ui-init.js - 304
+[2025-05-22T09:40:10.176Z] info: GET /swagger-ui-bundle.js - 304
+[2025-05-22T09:40:10.180Z] info: GET /swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:40:11.229Z] info: GET /favicon-32x32.png - 304
+[2025-05-22T09:40:11.426Z] info: GET /favicon-32x32.png - 304
+[2025-05-22T09:40:19.500Z] info: POST /api/auth/sign-up - 200
+[2025-05-22T09:41:44.311Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:41:44.412Z] info: Database synced with alter
+[2025-05-22T09:43:05.383Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:43:05.495Z] info: GET / - 200
+[2025-05-22T09:43:05.505Z] info: Database synced with alter
+[2025-05-22T09:43:08.257Z] info: GET / - 304
+[2025-05-22T09:43:13.106Z] info: GET /api-docs/ - 304
+[2025-05-22T09:43:13.164Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:43:13.190Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:43:13.194Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:43:13.212Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:43:13.973Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:43:17.758Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:43:17.768Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:44:25.950Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:44:26.063Z] info: Database synced with alter
+[2025-05-22T09:44:47.970Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:44:48.066Z] info: Database synced with alter
+[2025-05-22T09:44:50.591Z] info: GET /api-docs/ - 304
+[2025-05-22T09:44:50.639Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:44:50.646Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:44:50.649Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:44:50.654Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:44:51.953Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:44:52.306Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:44:54.372Z] warn: Can't find /api/auth/sign-up on this server
+[2025-05-22T09:44:54.382Z] info: POST /api/auth/sign-up - 404
+[2025-05-22T09:50:11.999Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:50:12.106Z] info: Database synced with alter
+[2025-05-22T09:50:19.044Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:50:19.151Z] info: Database synced with alter
+[2025-05-22T09:50:21.078Z] info: GET /api-docs/ - 304
+[2025-05-22T09:50:21.148Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:50:21.155Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:50:21.161Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:50:21.164Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:50:21.702Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:50:22.080Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:50:24.644Z] info: POST /api/auth/sign-up - 400
+[2025-05-22T09:51:10.294Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:51:10.407Z] info: GET /api-docs/ - 304
+[2025-05-22T09:51:10.438Z] info: Database synced with alter
+[2025-05-22T09:51:10.447Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:51:10.459Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:51:10.463Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:51:10.468Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:51:10.946Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:51:11.084Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:51:13.686Z] info: POST /api/auth/sign-up - 400
+[2025-05-22T09:51:23.976Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:51:24.073Z] info: Database synced with alter
+[2025-05-22T09:51:24.156Z] info: GET /api-docs/ - 304
+[2025-05-22T09:51:24.195Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:51:24.203Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:51:24.210Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:51:24.214Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:51:24.840Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:51:25.037Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:51:46.768Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:51:46.890Z] info: GET /api-docs/ - 200
+[2025-05-22T09:51:46.902Z] info: Database synced with alter
+[2025-05-22T09:51:46.923Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:51:46.943Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:51:46.946Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:51:46.951Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:51:47.439Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:51:47.572Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:51:55.627Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:51:55.725Z] info: GET /api-docs/ - 304
+[2025-05-22T09:51:55.762Z] info: Database synced with alter
+[2025-05-22T09:51:55.775Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:51:55.784Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:51:55.786Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:51:55.792Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:51:56.142Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:51:56.272Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:52:13.373Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:52:13.504Z] info: GET /api-docs/ - 304
+[2025-05-22T09:52:13.512Z] info: Database synced with alter
+[2025-05-22T09:52:13.542Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:52:13.555Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:52:13.557Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:52:13.566Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:52:13.917Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:52:14.040Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:52:39.840Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:52:39.952Z] info: GET /api-docs/ - 304
+[2025-05-22T09:52:39.972Z] info: Database synced with alter
+[2025-05-22T09:52:39.985Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:52:39.991Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:52:39.994Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:52:40.006Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:52:40.411Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:52:40.566Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:53:03.914Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:53:04.026Z] info: Database synced with alter
+[2025-05-22T09:53:20.168Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:53:20.284Z] info: Database synced with alter
+[2025-05-22T09:53:21.948Z] info: GET /api-docs/ - 304
+[2025-05-22T09:53:21.983Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:53:21.996Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:53:22.006Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:53:22.013Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:53:22.484Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:53:22.719Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:53:26.651Z] info: POST /api/auth/sign-up - 400
+[2025-05-22T09:53:45.442Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:53:45.539Z] info: GET /api-docs/ - 304
+[2025-05-22T09:53:45.570Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:53:45.574Z] info: Database synced with alter
+[2025-05-22T09:53:45.584Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:53:45.593Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:53:45.599Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:53:45.966Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:53:46.122Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:53:54.327Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:53:54.451Z] info: GET /api-docs/ - 304
+[2025-05-22T09:53:54.488Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:53:54.500Z] info: Database synced with alter
+[2025-05-22T09:53:54.502Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:53:54.504Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:53:54.509Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T09:53:54.870Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:53:55.004Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:53:57.694Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T09:54:15.158Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:54:15.255Z] info: Database synced with alter
+[2025-05-22T09:54:25.299Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:54:25.398Z] info: Database synced with alter
+[2025-05-22T09:55:40.734Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:55:40.830Z] info: Database synced with alter
+[2025-05-22T09:56:04.053Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:56:04.149Z] info: Database synced with alter
+[2025-05-22T09:56:11.197Z] info: GET /api-docs/ - 304
+[2025-05-22T09:56:11.260Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:56:11.266Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:56:11.270Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:56:11.272Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:56:11.829Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:56:11.982Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:56:14.548Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T09:56:25.665Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:56:25.766Z] info: Database synced with alter
+[2025-05-22T09:57:20.870Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:57:20.983Z] info: GET /api-docs/ - 304
+[2025-05-22T09:57:20.993Z] info: Database synced with alter
+[2025-05-22T09:57:21.034Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T09:57:21.048Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T09:57:21.052Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T09:57:21.054Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T09:57:21.693Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:57:21.892Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T09:57:24.334Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T09:59:47.041Z] info: Server running in development mode at http://localhost
+[2025-05-22T09:59:47.140Z] info: Database synced with alter
+[2025-05-22T10:01:15.609Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:01:15.715Z] info: GET /api-docs/ - 304
+[2025-05-22T10:01:15.742Z] info: Database synced with alter
+[2025-05-22T10:01:15.759Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:01:15.768Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:01:15.774Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:01:15.777Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:01:16.265Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:01:16.408Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:01:18.920Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:01:58.474Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:01:58.572Z] info: Database synced with alter
+[2025-05-22T10:02:09.467Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:02:09.565Z] info: Database synced with alter
+[2025-05-22T10:02:19.495Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:02:19.591Z] info: Database synced with alter
+[2025-05-22T10:02:27.066Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:02:27.170Z] info: Database synced with alter
+[2025-05-22T10:02:27.487Z] info: GET /api-docs/ - 304
+[2025-05-22T10:02:27.530Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:02:27.540Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:02:27.545Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:02:27.548Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:02:28.096Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:02:28.254Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:02:30.504Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:03:40.153Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:03:40.262Z] info: Database synced with alter
+[2025-05-22T10:03:40.410Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:07:48.676Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:07:48.791Z] info: Database synced with alter
+[2025-05-22T10:07:53.216Z] info: GET /api-docs/ - 304
+[2025-05-22T10:07:53.337Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:07:53.354Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:07:53.359Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:07:53.364Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:07:54.716Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:07:55.000Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:07:58.818Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:07.429Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:08:07.535Z] info: Database synced with alter
+[2025-05-22T10:08:08.437Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:09.724Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:10.220Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:10.381Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:10.548Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:10.712Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:10.868Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:08:11.017Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:09:43.520Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:09:43.651Z] info: Database synced with alter
+[2025-05-22T10:09:45.558Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:10:19.217Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:10:19.327Z] info: Database synced with alter
+[2025-05-22T10:10:19.785Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:10:31.097Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:10:31.271Z] info: Database synced with alter
+[2025-05-22T10:10:31.278Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:11:52.594Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:11:52.709Z] info: Database synced with alter
+[2025-05-22T10:11:52.997Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:14:30.725Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:14:30.842Z] info: Database synced with alter
+[2025-05-22T10:15:52.932Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:15:53.033Z] info: Database synced with alter
+[2025-05-22T10:16:40.345Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:16:40.451Z] info: Database synced with alter
+[2025-05-22T10:16:47.942Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:16:48.051Z] info: Database synced with alter
+[2025-05-22T10:17:02.812Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:17:02.913Z] info: Database synced with alter
+[2025-05-22T10:17:04.080Z] info: GET /api-docs/ - 304
+[2025-05-22T10:17:04.128Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:17:04.134Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:17:04.139Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:17:04.144Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:17:05.319Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:17:05.556Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:17:08.729Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:18:35.062Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:18:35.167Z] info: Database synced with alter
+[2025-05-22T10:18:39.888Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:18:40.015Z] info: Database synced with alter
+[2025-05-22T10:19:02.752Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:19:02.857Z] info: Database synced with alter
+[2025-05-22T10:19:17.582Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:19:17.682Z] info: Database synced with alter
+[2025-05-22T10:19:29.265Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:19:29.366Z] info: Database synced with alter
+[2025-05-22T10:19:52.034Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:19:52.148Z] info: Database synced with alter
+[2025-05-22T10:20:06.591Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:20:06.700Z] info: Database synced with alter
+[2025-05-22T10:21:13.515Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:21:13.630Z] info: Database synced with alter
+[2025-05-22T10:21:43.784Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:21:43.884Z] info: Database synced with alter
+[2025-05-22T10:22:30.958Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:22:31.063Z] info: Database synced with alter
+[2025-05-22T10:22:54.638Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:22:54.743Z] info: Database synced with alter
+[2025-05-22T10:23:00.679Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:23:00.774Z] info: Database synced with alter
+[2025-05-22T10:23:18.281Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:23:27.461Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:23:51.102Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:23:55.875Z] info: GET /api-docs/ - 304
+[2025-05-22T10:23:55.918Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:23:55.924Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:23:55.930Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:23:55.932Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:23:56.489Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:23:56.627Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:24:01.764Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:24:54.687Z] info: GET /api-docs/ - 304
+[2025-05-22T10:24:54.743Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:24:54.752Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:24:54.761Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:24:54.786Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:24:55.343Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:24:55.512Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:25:02.426Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:25:20.163Z] info: GET /api-docs/ - 304
+[2025-05-22T10:25:20.193Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:25:20.219Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:25:20.221Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:25:20.223Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:25:20.262Z] info: GET /api-docs/swagger-ui-init.js - 200
+[2025-05-22T10:25:20.265Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:25:20.267Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:25:20.709Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:25:20.865Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:25:23.882Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:41:41.183Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:42:17.303Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:42:29.759Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:44:00.495Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:44:06.015Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:44:55.418Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:44:58.516Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:45:01.935Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:45:17.083Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:45:23.560Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:45:38.633Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:46:22.105Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:47:12.625Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:47:18.699Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:47:26.211Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:47:27.935Z] info: GET /api-docs/ - 304
+[2025-05-22T10:47:27.965Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:47:27.971Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:47:27.972Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:47:27.974Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:47:28.760Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:47:28.890Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:47:32.879Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:48:37.729Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:48:41.725Z] info: GET /api-docs/ - 304
+[2025-05-22T10:48:41.755Z] info: GET /api-docs/swagger-ui.css - 304
+[2025-05-22T10:48:41.762Z] info: GET /api-docs/swagger-ui-init.js - 304
+[2025-05-22T10:48:41.764Z] info: GET /api-docs/swagger-ui-bundle.js - 304
+[2025-05-22T10:48:41.766Z] info: GET /api-docs/swagger-ui-standalone-preset.js - 304
+[2025-05-22T10:48:42.133Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:48:42.229Z] info: GET /api-docs/favicon-32x32.png - 304
+[2025-05-22T10:48:44.816Z] info: POST /api/auth/sign-up - 500
+[2025-05-22T10:48:57.515Z] info: POST /api/auth/sign-up - 201
+[2025-05-22T10:49:05.921Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:51:00.377Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:51:30.743Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:51:47.950Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:51:56.144Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:52:00.078Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:52:23.254Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:52:30.070Z] info: Server running in development mode at http://localhost
+[2025-05-22T10:52:33.402Z] info: Server running in development mode at http://localhost

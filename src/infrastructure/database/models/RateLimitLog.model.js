@@ -2,7 +2,7 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  const RateLimitLog = sequelize.define(
+  const rate_limit_log = sequelize.define(
     "rate_limit_log",
     {
       id: {
@@ -21,12 +21,12 @@ module.exports = (sequelize) => {
     {
       paranoid: true,
       freezeTableName: true,
-      tableName: "RateLimitLog",
+      tableName: "rate_limit_log",
       timestamps: true,
     }
   );
 
-  RateLimitLog.associate = (models) => {};
+  rate_limit_log.associate = (models) => {};
 
-  return RateLimitLog;
+  return rate_limit_log;
 };

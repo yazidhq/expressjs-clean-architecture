@@ -2,7 +2,7 @@
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  const RefreshToken = sequelize.define(
+  const refresh_token = sequelize.define(
     "refresh_token",
     {
       id: {
@@ -24,20 +24,20 @@ module.exports = (sequelize) => {
       },
     },
     {
-      tableName: "RefreshTokens",
+      tableName: "refresh_token",
       timestamps: true,
       paranoid: true,
       freezeTableName: true,
     }
   );
 
-  RefreshToken.associate = (models) => {
-    RefreshToken.belongsTo(models.User, {
+  refresh_token.associate = (models) => {
+    refresh_token.belongsTo(models.user, {
       foreignKey: "userId",
       onDelete: "CASCADE",
       onUpdate: "CASCADE",
     });
   };
 
-  return RefreshToken;
+  return refresh_token;
 };

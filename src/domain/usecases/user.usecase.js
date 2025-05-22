@@ -1,4 +1,4 @@
-const AppError = require("../utils/appError.util");
+const AppError = require("../../shared/utils/appError.util");
 const userRepo = require("../repositories/user.repository");
 
 exports.createUser = async (data) => {

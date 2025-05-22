@@ -1,8 +1,8 @@
-const { catchAsync } = require("../utils/catchAsync.util");
-const authService = require("../services/auth.service");
+const { catchAsync } = require("../../shared/utils/catchAsync.util");
+const authUseCase = require("../../domain/usecases/auth.usecase");
 
 exports.signUp = catchAsync(async (req, res, next) => {
-  const { result, accessToken, refreshToken } = await authService.signUp(
+  const { result, accessToken, refreshToken } = await authUseCase.signUp(
     req.body
   );
 
@@ -10,7 +10,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: authService.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: authUseCase.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.status(201).json({
@@ -21,13 +21,13 @@ exports.signUp = catchAsync(async (req, res, next) => {
 });
 
 exports.signIn = catchAsync(async (req, res, next) => {
-  const { accessToken, refreshToken } = await authService.signIn(req.body);
+  const { accessToken, refreshToken } = await authUseCase.signIn(req.body);
 
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: authService.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: authUseCase.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.status(200).json({
@@ -40,13 +40,13 @@ exports.refreshToken = catchAsync(async (req, res, next) => {
   const token = req.cookies.refreshToken;
 
   const { newAccessToken, newRefreshToken } =
-    await authService.verifyRefreshToken(token);
+    await authUseCase.verifyRefreshToken(token);
 
   res.cookie("refreshToken", newRefreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: authService.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: authUseCase.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.status(200).json({
@@ -58,7 +58,7 @@ exports.refreshToken = catchAsync(async (req, res, next) => {
 exports.logout = catchAsync(async (req, res, next) => {
   const token = req.cookies.refreshToken;
 
-  await authService.logout(token);
+  await authUseCase.logout(token);
 
   res.clearCookie("refreshToken", {
     httpOnly: true,

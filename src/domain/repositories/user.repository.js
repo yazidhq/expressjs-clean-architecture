@@ -1,7 +1,7 @@
 const { Op } = require("sequelize");
 const db = require("../../infrastructure/database/models");
 
-const User = db.User;
+const User = db.user;
 
 exports.create = async (data) => {
   return await User.create(data);

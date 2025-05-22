@@ -1,10 +1,10 @@
 const { catchAsync } = require("../../shared/utils/catchAsync.util");
 const helper = require("../../shared/utils/helper.util");
-const userService = require("../../services/user.service");
+const userUseCase = require("../../domain/usecases/user.usecase");
 
 exports.createUser = catchAsync(async (req, res, next) => {
   const data = req.body;
-  const create = await userService.createUser(data);
+  const create = await userUseCase.createUser(data);
   return sendSuccess(res, "User created successfully", create, 201);
 });
 
@@ -13,7 +13,7 @@ exports.getUsers = catchAsync(async (req, res, next) => {
   const { limit, offset, page: currentPage } = helper.getPagination(page, size);
   const { where, include } = helper.buildFilter(filter);
 
-  const { rows, count } = await userService.getUsers(
+  const { rows, count } = await userUseCase.getUsers(
     where,
     include,
     limit,
@@ -26,24 +26,24 @@ exports.getUsers = catchAsync(async (req, res, next) => {
 
 exports.getUserById = catchAsync(async (req, res, next) => {
   const userId = req.params.id;
-  const user = await userService.findUserById(userId);
+  const user = await userUseCase.findUserById(userId);
   return sendSuccess(res, "User fetched successfully", user, 200);
 });
 
 exports.updateUser = catchAsync(async (req, res, next) => {
   const userId = req.params.id;
   const data = req.body;
-  const update = await userService.updateUser(userId, data);
+  const update = await userUseCase.updateUser(userId, data);
   return sendSuccess(res, "User updated successfully", update, 200);
 });
 
 exports.truncateUsers = catchAsync(async (req, res, next) => {
-  await userService.truncateUsers();
+  await userUseCase.truncateUsers();
   return sendSuccess(res, "Data truncated successfully", null, 200);
 });
 
 exports.deleteUser = catchAsync(async (req, res, next) => {
   const userId = req.params.id;
-  await userService.deleteUser(userId);
+  await userUseCase.deleteUser(userId);
   return sendSuccess(res, "User deleted successfully", null, 200);
 });

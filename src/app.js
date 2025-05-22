@@ -35,7 +35,11 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "API" });
 });
 
-glob.sync("./app/routes/*.js").forEach((file) => {
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpecs = require("./infrastructure/config/swagger.config");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+
+glob.sync("./src/interface/routes/*.js").forEach((file) => {
   require(path.resolve(file))(app);
 });
 

@@ -1,9 +1,9 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const db = require("../db/models");
+const db = require("../../infrastructure/database/models");
 
-const User = db.User;
-const RefreshToken = db.RefreshToken;
+const User = db.user;
+const RefreshToken = db.refresh_token;
 
 const createAccessToken = (payload) => {
   return jwt.sign(payload, process.env.JWT_SECRET_KEY, {

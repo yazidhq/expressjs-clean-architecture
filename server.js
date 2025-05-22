@@ -8,7 +8,6 @@ if (process.env.NODE_ENV === "production") {
 
 const app = require("./src/app");
 const { logger } = require("./src/shared/utils/logger.util");
-const { sequelize } = require("./src/infrastructure/config/database");
 
 const PORT = process.env.APP_PORT || 3000;
 
@@ -16,12 +15,3 @@ app.listen(PORT, () => {
   const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
   logger.info(`Server running in ${process.env.NODE_ENV} mode at ${APP_URL}`);
 });
-
-sequelize
-  .sync({ alter: true })
-  .then(() => {
-    logger.info("Database synced with alter");
-  })
-  .catch((err) => {
-    logger.error("Failed to sync database:", err);
-  });

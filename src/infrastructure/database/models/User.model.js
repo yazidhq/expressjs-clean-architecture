@@ -1,10 +1,10 @@
 "use strict";
 const { DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
-const AppError = require("../../../utils/appError.util");
+const AppError = require("../../../shared/utils/appError.util");
 
 module.exports = (sequelize) => {
-  const User = sequelize.define(
+  const user = sequelize.define(
     "user",
     {
       id: {
@@ -61,20 +61,20 @@ module.exports = (sequelize) => {
       },
     },
     {
+      tableName: "user",
+      timestamps: true,
       paranoid: true,
       freezeTableName: true,
-      tableName: "User",
-      timestamps: true,
     }
   );
 
-  User.associate = (models) => {
-    User.hasMany(models.RefreshToken, {
+  user.associate = (models) => {
+    user.hasMany(models.refresh_token, {
       foreignKey: "userId",
       onDelete: "CASCADE",
       onUpdate: "CASCADE",
     });
   };
 
-  return User;
+  return user;
 };
