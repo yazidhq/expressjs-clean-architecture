@@ -1,3 +1,10 @@
+/**
+ * @swagger
+ * tags:
+ *   name: Auth
+ *   description: User Authentication
+ */
+
 const {
   signUp,
   signIn,
@@ -14,13 +21,6 @@ const limiter = require("../middleware/limitter.middleware");
 
 const router = require("express").Router();
 const base_url = "/api/auth";
-
-/**
- * @swagger
- * tags:
- *   name: Auth
- *   description: User Authentication
- */
 
 /**
  * @swagger
