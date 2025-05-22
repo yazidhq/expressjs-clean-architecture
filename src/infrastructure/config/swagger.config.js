@@ -12,6 +12,20 @@ const options = {
         url: `${process.env.APP_URL}:${process.env.APP_PORT}`,
       },
     ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
   },
   apis: ["./src/interface/routes/*.js"],
 };
