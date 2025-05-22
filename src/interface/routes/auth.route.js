@@ -68,7 +68,7 @@ router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp);
  * @swagger
  * /api/auth/sign-in:
  *   post:
- *     summary: Login pengguna
+ *     summary: Sign In
  *     tags: [Auth]
  *     requestBody:
  *       required: true
@@ -88,9 +88,9 @@ router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp);
  *                 example: 12345678
  *     responses:
  *       200:
- *         description: Login berhasil
+ *         description: Success
  *       401:
- *         description: Kredensial salah
+ *         description: Failed
  */
 router.route(`${base_url}/sign-in`).post(validateSignIn, limiter, signIn);
 
@@ -98,13 +98,13 @@ router.route(`${base_url}/sign-in`).post(validateSignIn, limiter, signIn);
  * @swagger
  * /api/auth/refresh-token:
  *   post:
- *     summary: Refresh token akses
+ *     summary: Refresh access token
  *     tags: [Auth]
  *     responses:
  *       200:
- *         description: Token baru dikembalikan
+ *         description: Success
  *       403:
- *         description: Refresh token tidak valid
+ *         description: Failed
  */
 router.route(`${base_url}/refresh-token`).post(limiter, refreshToken);
 
@@ -112,11 +112,11 @@ router.route(`${base_url}/refresh-token`).post(limiter, refreshToken);
  * @swagger
  * /api/auth/logout:
  *   post:
- *     summary: Logout pengguna
+ *     summary: Sign Out
  *     tags: [Auth]
  *     responses:
  *       200:
- *         description: Logout berhasil
+ *         description: Success
  */
 router.route(`${base_url}/logout`).post(logout);
 

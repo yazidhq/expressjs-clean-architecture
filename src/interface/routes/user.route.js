@@ -29,7 +29,7 @@ router
    * @swagger
    * /api/user/:
    *   post:
-   *     summary: Tambah user baru
+   *     summary: Create new user
    *     tags: [Users]
    *     security:
    *       - bearerAuth: []
@@ -64,9 +64,9 @@ router
    *                 example: 123456
    *     responses:
    *       201:
-   *         description: User berhasil dibuat
+   *         description: Success
    *       400:
-   *         description: Validasi gagal
+   *         description: Failed
    */
   .post(authentication, restrictTo("superadmin"), createUser)
 
@@ -74,13 +74,13 @@ router
    * @swagger
    * /api/user/:
    *   get:
-   *     summary: Ambil semua data user
+   *     summary: Get all user
    *     tags: [Users]
    *     security:
    *       - bearerAuth: []
    *     responses:
    *       200:
-   *         description: Daftar user
+   *         description: User lists
    */
   .get(authentication, restrictTo("superadmin"), getUsers)
 
@@ -88,13 +88,13 @@ router
    * @swagger
    * /api/user/:
    *   delete:
-   *     summary: Hapus semua user
+   *     summary: Truncate user
    *     tags: [Users]
    *     security:
    *       - bearerAuth: []
    *     responses:
    *       200:
-   *         description: Semua user berhasil dihapus
+   *         description: Success
    */
   .delete(authentication, restrictTo("superadmin"), truncateUsers);
 
@@ -105,7 +105,7 @@ router
    * @swagger
    * /api/user/{id}:
    *   get:
-   *     summary: Ambil detail user berdasarkan ID
+   *     summary: Get user by id
    *     tags: [Users]
    *     security:
    *       - bearerAuth: []
@@ -117,9 +117,9 @@ router
    *           type: string
    *     responses:
    *       200:
-   *         description: Data user ditemukan
+   *         description: Success
    *       404:
-   *         description: User tidak ditemukan
+   *         description: Failed
    */
   .get(authentication, restrictTo("superadmin"), getUserById)
 
@@ -127,7 +127,7 @@ router
    * @swagger
    * /api/user/{id}:
    *   patch:
-   *     summary: Perbarui data user
+   *     summary: Update user
    *     tags: [Users]
    *     security:
    *       - bearerAuth: []
@@ -153,7 +153,7 @@ router
    *                 type: string
    *     responses:
    *       200:
-   *         description: User diperbarui
+   *         description: Success
    */
   .patch(authentication, restrictTo("superadmin"), updateUser)
 
@@ -161,7 +161,7 @@ router
    * @swagger
    * /api/user/{id}:
    *   delete:
-   *     summary: Hapus user berdasarkan ID
+   *     summary: Delete user by id
    *     tags: [Users]
    *     security:
    *       - bearerAuth: []
@@ -173,7 +173,7 @@ router
    *           type: string
    *     responses:
    *       200:
-   *         description: User berhasil dihapus
+   *         description: Success
    */
   .delete(authentication, restrictTo("superadmin"), deleteUser);
 
