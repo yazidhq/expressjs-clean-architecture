@@ -2,7 +2,7 @@
 node_modules
 
 # log
-app/logs/error.log
+src/logs/error.log
 
 # env
 .env

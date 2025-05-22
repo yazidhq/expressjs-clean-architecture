@@ -31,8 +31,8 @@ fs.readdirSync(__dirname)
   })
   .forEach((file) => {
     const modelExports = require(path.join(__dirname, file));
-    const model = modelExports(sequelize, Sequelize.DataTypes); // Inisialisasi model dengan sequelize dan DataTypes
-    db[model.name] = model; // Tambahkan model ke db
+    const model = modelExports(sequelize, Sequelize.DataTypes);
+    db[model.name] = model;
   });
 
 Object.keys(db).forEach((modelName) => {
