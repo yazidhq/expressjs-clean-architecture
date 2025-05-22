@@ -131,8 +131,8 @@ const verifyRefreshToken = async (token) => {
 
 const logout = async (token) => {
   if (token) {
-    const token = await refreshTokenRepository.findByToken(token);
-    await token.destroy();
+    const storedToken = await refreshTokenRepository.findByToken(token);
+    await storedToken.destroy();
   }
 };
 
