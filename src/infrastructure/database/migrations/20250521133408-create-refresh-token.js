@@ -4,18 +4,18 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("refresh_token", {
       id: {
+        allowNull: false,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
-        allowNull: false,
       },
       token: {
-        type: Sequelize.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       userId: {
-        type: Sequelize.UUID,
         allowNull: false,
+        type: Sequelize.UUID,
         references: {
           model: "User",
           key: "id",
