@@ -8,31 +8,31 @@ module.exports = (sequelize) => {
     "user",
     {
       id: {
+        allowNull: false,
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        allowNull: false,
       },
       role: {
-        type: DataTypes.ENUM("superadmin", "admin", "user"),
         allowNull: false,
+        type: DataTypes.ENUM("superadmin", "admin", "user"),
         validate: {
           notNull: { msg: "Role cannot be null" },
           notEmpty: { msg: "Role cannot be empty" },
         },
       },
       username: {
+        allowNull: false,
         type: DataTypes.STRING,
         unique: true,
-        allowNull: false,
         validate: {
           notNull: { msg: "Username cannot be null" },
           notEmpty: { msg: "Username cannot be empty" },
         },
       },
       email: {
-        type: DataTypes.STRING,
         allowNull: false,
+        type: DataTypes.STRING,
         unique: true,
         validate: {
           notNull: { msg: "Email cannot be null" },
@@ -41,8 +41,8 @@ module.exports = (sequelize) => {
         },
       },
       password: {
-        type: DataTypes.STRING,
         allowNull: false,
+        type: DataTypes.STRING,
         validate: {
           notNull: { msg: "Password cannot be null" },
           notEmpty: { msg: "Password cannot be empty" },

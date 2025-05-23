@@ -6,22 +6,22 @@ module.exports = (sequelize) => {
     "refresh_token",
     {
       id: {
+        allowNull: false,
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        allowNull: false,
       },
       token: {
-        type: DataTypes.STRING,
         allowNull: false,
+        type: DataTypes.STRING,
         validate: {
           notNull: { msg: "Token cannot be null" },
           notEmpty: { msg: "Token cannot be empty" },
         },
       },
       userId: {
-        type: DataTypes.UUID,
         allowNull: false,
+        type: DataTypes.UUID,
         validate: {
           notNull: { msg: "userId cannot be null" },
           notEmpty: { msg: "userId cannot be empty" },

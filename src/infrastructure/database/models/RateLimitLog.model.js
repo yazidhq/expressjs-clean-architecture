@@ -6,10 +6,10 @@ module.exports = (sequelize) => {
     "rate_limit_log",
     {
       id: {
+        allowNull: false,
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        allowNull: false,
       },
       ipAddress: {
         type: DataTypes.STRING,
