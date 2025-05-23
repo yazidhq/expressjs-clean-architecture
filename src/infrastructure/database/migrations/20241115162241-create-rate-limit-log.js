@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
       },
-      ip_address: {
+      ipAddress: {
         type: Sequelize.STRING,
       },
       endpoint: {

@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
         primaryKey: true,
         allowNull: false,
       },
-      ip_address: {
+      ipAddress: {
         type: DataTypes.STRING,
       },
       endpoint: {
