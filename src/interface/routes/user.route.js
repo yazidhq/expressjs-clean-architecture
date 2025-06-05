@@ -14,10 +14,8 @@ const {
   deleteUser,
 } = require("../controllers/user.controller");
 
-const {
-  authentication,
-  restrictTo,
-} = require("../middleware/authentication.middleware");
+const { authentication, restrictTo } = require("../middleware/authentication.middleware");
+const auditLog = require("../middleware/auditLog.middleware");
 
 const router = require("express").Router();
 const base_url = "/api/user";
@@ -68,7 +66,7 @@ router
    *       400:
    *         description: Failed
    */
-  .post(authentication, restrictTo("superadmin"), createUser)
+  .post(authentication, restrictTo("superadmin"), createUser, auditLog("createUser", "user"))
 
   /**
    * @swagger
@@ -114,7 +112,7 @@ router
    *       200:
    *         description: Success
    */
-  .delete(authentication, restrictTo("superadmin"), truncateUsers);
+  .delete(authentication, restrictTo("superadmin"), truncateUsers, auditLog("truncateUsers", "user"));
 
 router
   .route(`${base_url}/:id`)
@@ -173,7 +171,7 @@ router
    *       200:
    *         description: Success
    */
-  .patch(authentication, restrictTo("superadmin"), updateUser)
+  .patch(authentication, restrictTo("superadmin"), updateUser, auditLog("updateUser", "user"))
 
   /**
    * @swagger
@@ -193,7 +191,7 @@ router
    *       200:
    *         description: Success
    */
-  .delete(authentication, restrictTo("superadmin"), deleteUser);
+  .delete(authentication, restrictTo("superadmin"), deleteUser, auditLog("deleteUser", "user"));
 
 module.exports = (app) => {
   app.use(router);

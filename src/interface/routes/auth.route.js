@@ -5,17 +5,9 @@
  *   description: User Authentication
  */
 
-const {
-  signUp,
-  signIn,
-  refreshToken,
-  logout,
-} = require("../controllers/auth.controller");
+const { signUp, signIn, refreshToken, logout } = require("../controllers/auth.controller");
 
-const {
-  validateSignUp,
-  validateSignIn,
-} = require("../validators/auth.validator");
+const { validateSignUp, validateSignIn } = require("../validators/auth.validator");
 
 const limiter = require("../middleware/limitter.middleware");
 
@@ -62,7 +54,7 @@ const base_url = "/api/auth";
  *       400:
  *         description: Failed
  */
-router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp);
+router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp, auditLog("signUp", "user"));
 
 /**
  * @swagger
@@ -92,7 +84,7 @@ router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp);
  *       401:
  *         description: Failed
  */
-router.route(`${base_url}/sign-in`).post(validateSignIn, limiter, signIn);
+router.route(`${base_url}/sign-in`).post(validateSignIn, limiter, signIn, auditLog("signIn", "user"));
 
 /**
  * @swagger
@@ -118,7 +110,7 @@ router.route(`${base_url}/refresh-token`).post(limiter, refreshToken);
  *       200:
  *         description: Success
  */
-router.route(`${base_url}/logout`).post(logout);
+router.route(`${base_url}/logout`).post(logout, auditLog("logout", "user"));
 
 module.exports = (app) => {
   app.use(router);

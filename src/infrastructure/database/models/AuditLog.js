@@ -36,12 +36,12 @@ module.exports = (sequelize) => {
         type: DataTypes.UUID,
       },
       oldValue: {
-        allowNull: false,
-        type: DataTypes.STRING,
+        allowNull: true,
+        type: DataTypes.JSON,
       },
       newValue: {
-        allowNull: false,
-        type: DataTypes.STRING,
+        allowNull: true,
+        type: DataTypes.JSON,
       },
     },
     {

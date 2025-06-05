@@ -18,9 +18,7 @@ module.exports = (userRepository, refreshTokenRepository) => {
   };
 
   const saveRefreshToken = async (userId, token) => {
-    const expiresAt = new Date(
-      Date.now() + times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN)
-    );
+    const expiresAt = new Date(Date.now() + times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN));
 
     await refreshTokenRepository.create({
       userId,
@@ -84,7 +82,7 @@ module.exports = (userRepository, refreshTokenRepository) => {
 
       await saveRefreshToken(user.id, refreshToken);
 
-      return { accessToken, refreshToken };
+      return { accessToken, refreshToken, user };
     },
 
     verifyRefreshToken: async (token) => {
@@ -119,9 +117,19 @@ module.exports = (userRepository, refreshTokenRepository) => {
     },
 
     logout: async (token) => {
-      if (token) {
-        const storedToken = await refreshTokenRepository.findByToken(token);
+      if (!token) return null;
+
+      const storedToken = await refreshTokenRepository.findByToken(token);
+      if (storedToken) {
         await storedToken.destroy();
+      }
+
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+        const user = await userRepository.findById(decoded.id);
+        return user;
+      } catch {
+        return null;
       }
     },
   };
