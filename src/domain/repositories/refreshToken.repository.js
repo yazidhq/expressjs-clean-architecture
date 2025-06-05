@@ -11,6 +11,9 @@ class RefreshTokenRepository {
   async update(refreshTokenEntity, data) {
     throw new Error("Not implemented");
   }
+  async truncate() {
+    throw new Error("Not implemented");
+  }
   async delete(refreshTokenEntity) {
     throw new Error("Not implemented");
   }
