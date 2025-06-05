@@ -6,7 +6,8 @@
 ## Introduction
 
 Welcome to the ExpressJS Boilerplate project!  
-This repository provides a starter template for building web applications using Express.js, a fast and minimalist web framework for Node.js.  
+This repository provides a starter template for building web applications using Express.js, a fast and minimalist web framework for Node.js.
+
 This boilerplate is designed with a modular structure, environment configuration, Sequelize ORM integration, middleware support, centralized error handling, and integrated logging.
 
 ---
