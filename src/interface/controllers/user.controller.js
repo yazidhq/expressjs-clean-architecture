@@ -3,7 +3,7 @@ const helper = require("../../shared/utils/helper.util");
 const userUseCase = require("../../compositions/user.composition");
 const { sendPaginated, sendSuccess } = require("../../shared/utils/response.util");
 
-exports.createUser = catchAsync(async (req, res, next) => {
+const createUser = catchAsync(async (req, res, next) => {
   const data = req.body;
   const created = await userUseCase.createUser(data);
 
@@ -16,7 +16,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
   return sendSuccess(res, "User created successfully", create, 201);
 });
 
-exports.getUsers = catchAsync(async (req, res, next) => {
+const getUsers = catchAsync(async (req, res, next) => {
   const { page, size, filter } = req.query;
   const { limit, offset, page: currentPage } = helper.getPagination(page, size);
   const { where, include } = helper.buildFilter(filter);
@@ -27,14 +27,14 @@ exports.getUsers = catchAsync(async (req, res, next) => {
   return sendPaginated(res, "Users fetched successfully", response);
 });
 
-exports.getUserById = catchAsync(async (req, res, next) => {
+const getUserById = catchAsync(async (req, res, next) => {
   const userId = req.params.id;
   const user = await userUseCase.getUserById(userId);
 
   return sendSuccess(res, "User fetched successfully", user, 200);
 });
 
-exports.updateUser = catchAsync(async (req, res, next) => {
+const updateUser = catchAsync(async (req, res, next) => {
   const userId = req.params.id;
   const data = req.body;
 
@@ -50,19 +50,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
   return sendSuccess(res, "User updated successfully", update, 200);
 });
 
-exports.truncateUsers = catchAsync(async (req, res, next) => {
-  await userUseCase.truncateUsers();
-
-  res.locals.audit = {
-    recordId: "ALL",
-    oldValue: null,
-    newValue: null,
-  };
-
-  return sendSuccess(res, "Data truncated successfully", null, 200);
-});
-
-exports.deleteUser = catchAsync(async (req, res, next) => {
+const deleteUser = catchAsync(async (req, res, next) => {
   const userId = req.params.id;
   const before = await userUseCase.getUserById(userId);
 
@@ -76,3 +64,17 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
 
   return sendSuccess(res, "User deleted successfully", null, 200);
 });
+
+const truncateUsers = catchAsync(async (req, res, next) => {
+  await userUseCase.truncateUsers();
+
+  res.locals.audit = {
+    recordId: "ALL",
+    oldValue: null,
+    newValue: null,
+  };
+
+  return sendSuccess(res, "Data truncated successfully", null, 200);
+});
+
+module.exports = { createUser, getUsers, getUserById, updateUser, deleteUser, truncateUsers };

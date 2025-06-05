@@ -1,4 +1,4 @@
-exports.parseExpires = (expiryStr) => {
+const parseExpires = (expiryStr) => {
   const unit = expiryStr.slice(-1);
   const amount = parseInt(expiryStr.slice(0, -1));
   switch (unit) {
@@ -12,3 +12,5 @@ exports.parseExpires = (expiryStr) => {
       return 30 * 24 * 60 * 60 * 1000;
   }
 };
+
+module.exports = parseExpires;

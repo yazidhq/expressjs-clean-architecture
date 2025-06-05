@@ -1,9 +1,4 @@
-exports.sendSuccess = (
-  res,
-  message = "Success",
-  data = null,
-  statusCode = 200
-) => {
+const sendSuccess = (res, message = "Success", data = null, statusCode = 200) => {
   return res.status(statusCode).json({
     status: "success",
     message,
@@ -11,15 +6,12 @@ exports.sendSuccess = (
   });
 };
 
-exports.sendPaginated = (
-  res,
-  message = "Success",
-  pagination = {},
-  statusCode = 200
-) => {
+const sendPaginated = (res, message = "Success", pagination = {}, statusCode = 200) => {
   return res.status(statusCode).json({
     status: "success",
     message,
     ...pagination,
   });
 };
+
+module.exports = { sendSuccess, sendPaginated };

@@ -4,8 +4,8 @@ const RefreshToken = db.refresh_token;
 const RefreshTokenRepository = require("../../domain/repositories/refreshToken.repository");
 
 class RefreshTokenImpl extends RefreshTokenRepository {
-  async create(data) {
-    return await RefreshToken.create(data);
+  async create(refreshTokenEntity) {
+    return await RefreshToken.create(refreshTokenEntity);
   }
 
   async findAndCount(where, include, limit, offset) {
@@ -21,16 +21,16 @@ class RefreshTokenImpl extends RefreshTokenRepository {
     return await RefreshToken.findOne({ where: { id } });
   }
 
-  async update(refreshTokenInstance, data) {
-    return await refreshTokenInstance.update(data);
-  }
-
-  async truncate() {
-    return await RefreshToken.truncate();
+  async update(refreshTokenInstance, refreshTokenEntity) {
+    return await refreshTokenInstance.update(refreshTokenEntity);
   }
 
   async delete(refreshTokenInstance) {
     return await refreshTokenInstance.destroy();
+  }
+
+  async truncate() {
+    return await RefreshToken.truncate();
   }
 
   async findByToken(token) {

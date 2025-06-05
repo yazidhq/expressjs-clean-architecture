@@ -25,12 +25,12 @@ class AuditLogImpl extends AuditLogRepository {
     return await auditLogInstance.update(data);
   }
 
-  async truncate() {
-    return await AuditLog.truncate();
-  }
-
   async delete(auditLogInstance) {
     return await auditLogInstance.destroy();
+  }
+
+  async truncate() {
+    return await AuditLog.truncate();
   }
 }
 

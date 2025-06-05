@@ -3,4 +3,6 @@ const config = require("./db.config");
 
 const env = process.env.NODE_ENV || "development";
 
-exports.sequelize = new Sequelize(config[env]);
+const sequelize = new Sequelize(config[env]);
+
+module.exports = sequelize;

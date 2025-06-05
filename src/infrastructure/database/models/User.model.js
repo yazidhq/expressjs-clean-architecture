@@ -52,10 +52,7 @@ module.exports = (sequelize) => {
         type: DataTypes.VIRTUAL,
         set(value) {
           if (value !== this.password) {
-            throw new AppError(
-              "Password and confirm password must be the same",
-              400
-            );
+            throw new AppError("Password and confirm password must be the same", 400);
           }
           if (value.length < 7) {
             throw new AppError("Password length must be greater than 7", 400);

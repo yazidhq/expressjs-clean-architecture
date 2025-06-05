@@ -21,10 +21,7 @@ const imageFileFilter = (req, file, callback) => {
   const ext = path.extname(file.originalname).toLowerCase();
 
   if (!allowedTypes.test(ext)) {
-    return callback(
-      new AppError("Require extension: jpeg, jpg, png, gif", 400),
-      false
-    );
+    return callback(new AppError("Require extension: jpeg, jpg, png, gif", 400), false);
   }
   callback(null, true);
 };
@@ -34,13 +31,7 @@ const documentFileFilter = (req, file, callback) => {
   const ext = path.extname(file.originalname).toLowerCase();
 
   if (!allowedTypes.test(ext)) {
-    return callback(
-      new AppError(
-        "Require extension: pdf, doc, docx, xls, xlsx, txt, csv",
-        400
-      ),
-      false
-    );
+    return callback(new AppError("Require extension: pdf, doc, docx, xls, xlsx, txt, csv", 400), false);
   }
   callback(null, true);
 };
@@ -48,8 +39,7 @@ const documentFileFilter = (req, file, callback) => {
 const uploadSingle = (fieldName, folder, fileType = "image") => {
   const storage = createStorage(folder);
 
-  const fileFilter =
-    fileType === "document" ? documentFileFilter : imageFileFilter;
+  const fileFilter = fileType === "document" ? documentFileFilter : imageFileFilter;
 
   return multer({
     storage,
@@ -58,16 +48,10 @@ const uploadSingle = (fieldName, folder, fileType = "image") => {
   }).single(fieldName);
 };
 
-const uploadMultiple = (
-  fieldName,
-  maxCount = 5,
-  folder,
-  fileType = "image"
-) => {
+const uploadMultiple = (fieldName, maxCount = 5, folder, fileType = "image") => {
   const storage = createStorage(folder);
 
-  const fileFilter =
-    fileType === "document" ? documentFileFilter : imageFileFilter;
+  const fileFilter = fileType === "document" ? documentFileFilter : imageFileFilter;
 
   return multer({
     storage,

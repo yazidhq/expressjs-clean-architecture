@@ -8,12 +8,7 @@ module.exports = (userRepository) => ({
   },
 
   getUsers: async (where, include, limit, offset) => {
-    const { rows, count } = await userRepository.findAndCount(
-      where,
-      include,
-      limit,
-      offset
-    );
+    const { rows, count } = await userRepository.findAndCount(where, include, limit, offset);
     if (!rows || rows.length === 0) throw new AppError("No users found", 404);
     return { rows, count };
   },
@@ -32,17 +27,17 @@ module.exports = (userRepository) => ({
     return updated;
   },
 
-  truncateUsers: async () => {
-    const truncated = await userRepository.truncateNonSuperadmin();
-    if (!truncated) throw new AppError("Failed to truncate users", 400);
-    return truncated;
-  },
-
   deleteUser: async (id) => {
     const foundUser = await userRepository.findById(id);
     if (!foundUser) throw new AppError("Invalid user id", 400);
     const deleted = await userRepository.delete(foundUser);
     if (!deleted) throw new AppError("Failed to delete the user", 400);
     return deleted;
+  },
+
+  truncateUsers: async () => {
+    const truncated = await userRepository.truncateNonSuperadmin();
+    if (!truncated) throw new AppError("Failed to truncate users", 400);
+    return truncated;
   },
 });

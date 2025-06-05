@@ -1,12 +1,12 @@
 const { Op } = require("sequelize");
 
-exports.getPagination = (page = 1, size = 10) => {
+const getPagination = (page = 1, size = 10) => {
   const limit = size > 0 ? +size : 10;
   const offset = page > 1 ? (page - 1) * limit : 0;
   return { limit, offset, page: +page, size: limit };
 };
 
-exports.getPagingData = (data, count, page, limit) => {
+const getPagingData = (data, count, page, limit) => {
   const totalItems = count;
   const totalPages = Math.ceil(totalItems / limit);
   const currentPage = page;
@@ -18,7 +18,7 @@ exports.getPagingData = (data, count, page, limit) => {
   };
 };
 
-exports.buildFilter = (filterJSON) => {
+const buildFilter = (filterJSON) => {
   if (!filterJSON) return { where: {}, include: [] };
 
   let filterObj = filterJSON;
@@ -103,3 +103,5 @@ exports.buildFilter = (filterJSON) => {
 
   return { where: finalWhere, include };
 };
+
+module.exports = { getPagination, getPagingData, buildFilter };
