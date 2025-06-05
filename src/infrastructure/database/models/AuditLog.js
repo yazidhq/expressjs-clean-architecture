@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
         primaryKey: true,
       },
       userId: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.UUID,
       },
       ipAddress: {
