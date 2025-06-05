@@ -34,4 +34,4 @@ class AuditLogImpl extends AuditLogRepository {
   }
 }
 
-module.exports = AuditLogImpl;
+module.exports = new AuditLogImpl();
