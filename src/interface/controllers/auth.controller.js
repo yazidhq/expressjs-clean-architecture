@@ -1,6 +1,6 @@
 const catchAsync = require("../../shared/utils/catchAsync.util");
 const authUsecases = require("../../compositions/auth.composition");
-const times = require("../../shared/utils/times.util");
+const parseExpires = require("../../shared/utils/times.util");
 
 const signUp = catchAsync(async (req, res, next) => {
   const { result, accessToken, refreshToken } = await authUsecases.signUp(req.body);
@@ -9,7 +9,7 @@ const signUp = catchAsync(async (req, res, next) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.locals.audit = {
@@ -36,7 +36,7 @@ const signIn = catchAsync(async (req, res, next) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.locals.audit = {
@@ -63,7 +63,7 @@ const refreshToken = catchAsync(async (req, res, next) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "Strict",
-    maxAge: times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
+    maxAge: parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   res.status(200).json({

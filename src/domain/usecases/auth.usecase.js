@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const times = require("../../shared/utils/times.util");
+const parseExpires = require("../../shared/utils/times.util");
 
 module.exports = (userRepository, refreshTokenRepository) => {
   const createAccessToken = (payload) => {
@@ -18,7 +18,7 @@ module.exports = (userRepository, refreshTokenRepository) => {
   };
 
   const saveRefreshToken = async (userId, token) => {
-    const expiresAt = new Date(Date.now() + times.parseExpires(process.env.JWT_REFRESH_EXPIRES_IN));
+    const expiresAt = new Date(Date.now() + parseExpires(process.env.JWT_REFRESH_EXPIRES_IN));
 
     await refreshTokenRepository.create({
       userId,
