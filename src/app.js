@@ -11,7 +11,7 @@ const sanitizeGlobal = require("./interface/middleware/sanitize.middleware");
 const globalErrorHandler = require("./interface/middleware/error.middleware");
 const { logger } = require("./shared/utils/logger.util");
 const AppError = require("./shared/utils/appError.util");
-const { catchAsync } = require("./shared/utils/catchAsync.util");
+const catchAsync = require("./shared/utils/catchAsync.util");
 
 const app = express();
 

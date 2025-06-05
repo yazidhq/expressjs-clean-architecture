@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const app = require("./src/app");
-const { logger } = require("./src/shared/utils/logger.util");
+const logger = require("./src/shared/utils/logger.util");
 
 const PORT = process.env.APP_PORT || 3000;
 

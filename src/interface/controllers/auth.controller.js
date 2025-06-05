@@ -1,4 +1,4 @@
-const { catchAsync } = require("../../shared/utils/catchAsync.util");
+const catchAsync = require("../../shared/utils/catchAsync.util");
 const authUsecases = require("../../compositions/auth.composition");
 const times = require("../../shared/utils/times.util");
 

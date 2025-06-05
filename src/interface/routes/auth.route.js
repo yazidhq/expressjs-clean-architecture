@@ -10,6 +10,7 @@ const { signUp, signIn, refreshToken, logout } = require("../controllers/auth.co
 const { validateSignUp, validateSignIn } = require("../validators/auth.validator");
 
 const limiter = require("../middleware/limitter.middleware");
+const auditLog = require("../middleware/auditLog.middleware");
 
 const router = require("express").Router();
 const base_url = "/api/auth";
