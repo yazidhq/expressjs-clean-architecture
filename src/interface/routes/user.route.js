@@ -66,7 +66,7 @@ router
    *       400:
    *         description: Failed
    */
-  .post(authentication, restrictTo("superadmin"), createUser, auditLog("createUser", "user"))
+  .post(authentication, restrictTo("superadmin"), auditLog("createUser", "user"), createUser)
 
   /**
    * @swagger
@@ -112,7 +112,7 @@ router
    *       200:
    *         description: Success
    */
-  .delete(authentication, restrictTo("superadmin"), truncateUsers, auditLog("truncateUsers", "user"));
+  .delete(authentication, restrictTo("superadmin"), auditLog("truncateUsers", "user"), truncateUsers);
 
 router
   .route(`${base_url}/:id`)
@@ -171,7 +171,7 @@ router
    *       200:
    *         description: Success
    */
-  .patch(authentication, restrictTo("superadmin"), updateUser, auditLog("updateUser", "user"))
+  .patch(authentication, restrictTo("superadmin"), auditLog("updateUser", "user"), updateUser)
 
   /**
    * @swagger
@@ -191,7 +191,7 @@ router
    *       200:
    *         description: Success
    */
-  .delete(authentication, restrictTo("superadmin"), deleteUser, auditLog("deleteUser", "user"));
+  .delete(authentication, restrictTo("superadmin"), auditLog("deleteUser", "user"), deleteUser);
 
 module.exports = (app) => {
   app.use(router);

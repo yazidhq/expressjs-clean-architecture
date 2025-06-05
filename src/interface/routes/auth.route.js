@@ -55,7 +55,7 @@ const base_url = "/api/auth";
  *       400:
  *         description: Failed
  */
-router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp, auditLog("signUp", "user"));
+router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, auditLog("signUp", "user"), signUp);
 
 /**
  * @swagger
@@ -85,7 +85,7 @@ router.route(`${base_url}/sign-up`).post(validateSignUp, limiter, signUp, auditL
  *       401:
  *         description: Failed
  */
-router.route(`${base_url}/sign-in`).post(validateSignIn, limiter, signIn, auditLog("signIn", "user"));
+router.route(`${base_url}/sign-in`).post(validateSignIn, limiter, auditLog("signIn", "user"), signIn);
 
 /**
  * @swagger
@@ -111,7 +111,7 @@ router.route(`${base_url}/refresh-token`).post(limiter, refreshToken);
  *       200:
  *         description: Success
  */
-router.route(`${base_url}/logout`).post(logout, auditLog("logout", "user"));
+router.route(`${base_url}/logout`).post(auditLog("logout", "user"), logout);
 
 module.exports = (app) => {
   app.use(router);
