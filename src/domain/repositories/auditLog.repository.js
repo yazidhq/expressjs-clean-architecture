@@ -1,5 +1,5 @@
 class AuditLogRepository {
-  async create(auditLogEntiry) {
+  async create(auditLogEntity) {
     throw new Error("Not implemented");
   }
   async findAndCount(where, include, limit, offset) {
@@ -8,10 +8,10 @@ class AuditLogRepository {
   async findById(id) {
     throw new Error("Not implemented");
   }
-  async update(auditLogEntiry, data) {
+  async update(auditLogEntity, data) {
     throw new Error("Not implemented");
   }
-  async delete(auditLogEntiry) {
+  async delete(auditLogEntity) {
     throw new Error("Not implemented");
   }
   async truncate() {

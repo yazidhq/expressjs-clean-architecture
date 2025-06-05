@@ -4,8 +4,8 @@ const AuditLog = db.audit_log;
 const AuditLogRepository = require("../../domain/repositories/auditLog.repository");
 
 class AuditLogImpl extends AuditLogRepository {
-  async create(auditLogEntiry) {
-    return await AuditLog(auditLogEntiry);
+  async create(auditLogEntity) {
+    return await AuditLog.create(auditLogEntity);
   }
 
   async findAndCount(where, include, limit, offset) {
