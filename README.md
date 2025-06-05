@@ -69,15 +69,15 @@ This boilerplate is designed with a modular structure, environment configuration
 
 - Start in development mode (with nodemon or similar):
 
-   ```bash
-   npm run start:dev
-   ```
+  ```bash
+  npm run start:dev
+  ```
 
 - Start in production mode:
 
-   ```bash
-   npm start
-   ```
+  ```bash
+  npm start
+  ```
 
 ---
 
@@ -125,9 +125,9 @@ This project integrates **Swagger** via **apidocs** to provide interactive API d
 
 - After running the server, you can access the Swagger UI at:
 
-   ```
-   http://localhost:<PORT>/api-docs
-   ```
+  ```
+  http://localhost:<PORT>/api-docs
+  ```
 
 - The Swagger JSON definition is automatically generated based on your route annotations and configurations.
 
@@ -141,18 +141,18 @@ This section provides guidance on how to use query filter parameters in your API
 
 ### Filter Parameter Conditions
 
-| No | Condition | Description                                     | Example JSON                                                | Explanation                                                      |
-| -- | --------- | ----------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------- |
-| 1  | **Not Equal**    | Excludes results that match         | `{ "role": { "ne": "user" } }`                              | Excludes data with role equal to 'user'.                         |
-| 2  | **Greater Than** | Includes values greater than     | `{ "age": { "gt": 25 } }`                                   | Includes data with age > 25.                                     |
-| 3  | **Greater Than or Equal** | Includes values ≥       | `{ "salary": { "gte": 5000 } }`                             | Includes data with salary ≥ 5000.                                |
-| 4  | **Less Than** | Includes values less than           | `{ "score": { "lt": 100 } }`                                | Includes data with score < 100.                                  |
-| 5  | **Less Than or Equal** | Includes values ≤          | `{ "rating": { "lte": 80 } }`                               | Includes data with rating ≤ 80.                                  |
-| 6  | **Like**  | Matches a pattern (substring)            | `{ "username": { "like": "john" } }`                        | Includes data with usernames containing 'john'.                  |
-| 7  | **In**    | Matches any of the specified values        | `{ "status": { "in": ["active", "pending"] } }`             | Includes data with status 'active' or 'pending'.                 |
-| 8  | **Default String Match** | Substring match          | `{ "email": "example" }`                                    | Includes data with emails containing 'example'.                  |
-| 9  | **OR Condition** | Combines multiple conditions OR  | `{ "or": [{ "country": "USA" }, { "country": "Canada" }] }` | Includes data from either 'USA' or 'Canada'.                     |
-| 10 | **Relation Filter** | Filter based on nested fields | `{ "profile.bio": { "like": "developer" } }`                | Includes data where the nested 'bio' field contains 'developer'. |
+| No  | Condition                 | Description                         | Example JSON                                                | Explanation                                                      |
+| --- | ------------------------- | ----------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------- |
+| 1   | **Not Equal**             | Excludes results that match         | `{ "role": { "ne": "user" } }`                              | Excludes data with role equal to 'user'.                         |
+| 2   | **Greater Than**          | Includes values greater than        | `{ "age": { "gt": 25 } }`                                   | Includes data with age > 25.                                     |
+| 3   | **Greater Than or Equal** | Includes values ≥                   | `{ "salary": { "gte": 5000 } }`                             | Includes data with salary ≥ 5000.                                |
+| 4   | **Less Than**             | Includes values less than           | `{ "score": { "lt": 100 } }`                                | Includes data with score < 100.                                  |
+| 5   | **Less Than or Equal**    | Includes values ≤                   | `{ "rating": { "lte": 80 } }`                               | Includes data with rating ≤ 80.                                  |
+| 6   | **Like**                  | Matches a pattern (substring)       | `{ "username": { "like": "john" } }`                        | Includes data with usernames containing 'john'.                  |
+| 7   | **In**                    | Matches any of the specified values | `{ "status": { "in": ["active", "pending"] } }`             | Includes data with status 'active' or 'pending'.                 |
+| 8   | **Default String Match**  | Substring match                     | `{ "email": "example" }`                                    | Includes data with emails containing 'example'.                  |
+| 9   | **OR Condition**          | Combines multiple conditions OR     | `{ "or": [{ "country": "USA" }, { "country": "Canada" }] }` | Includes data from either 'USA' or 'Canada'.                     |
+| 10  | **Relation Filter**       | Filter based on nested fields       | `{ "profile.bio": { "like": "developer" } }`                | Includes data where the nested 'bio' field contains 'developer'. |
 
 ---
 
@@ -222,17 +222,16 @@ Contact: [yazidhq00@gmail.com](mailto:yazidhq00@gmail.com)
 
 Features planned for future releases:
 
-| Feature                    | Description                                                          |
-| -------------------------- | ---------------------------------------------------------------------|
-| **Audit Logs**             | Record key actions/events in the system for tracking purposes.       |
-| **Session Management**     | Handle user sessions and authentication state.                       |
-| **Health Checks**          | Endpoint to monitor service status.                                  |
-| **Jobs / Queue**           | Background processing for async tasks.                               |
-| **Rate & Usage Analytics** | Track API usage and performance metrics.                             |
-| **WebSocket/Realtime**     | Enable real-time data via WebSocket or services like Pusher.         |
-| **Caching Layer**          | Use Redis or in-memory cache to improve performance.                 |
-| **Testing**                | Unit and integration tests for code reliability.                     |
-| **Code Linting & Hooks**   | Enforce code standards via linting and git hooks.                    |
-| **Containerization**       | Docker support for consistent environments.                          |
-| **CI/CD**                  | Automated build, test, and deployment pipelines.                     |
-| **API Versioning**         | Manage and maintain multiple API versions.                           |
+| Feature                    | Description                                                  |
+| -------------------------- | ------------------------------------------------------------ |
+| **Session Management**     | Handle user sessions and authentication state.               |
+| **Health Checks**          | Endpoint to monitor service status.                          |
+| **Jobs / Queue**           | Background processing for async tasks.                       |
+| **Rate & Usage Analytics** | Track API usage and performance metrics.                     |
+| **WebSocket/Realtime**     | Enable real-time data via WebSocket or services like Pusher. |
+| **Caching Layer**          | Use Redis or in-memory cache to improve performance.         |
+| **Testing**                | Unit and integration tests for code reliability.             |
+| **Code Linting & Hooks**   | Enforce code standards via linting and git hooks.            |
+| **Containerization**       | Docker support for consistent environments.                  |
+| **CI/CD**                  | Automated build, test, and deployment pipelines.             |
+| **API Versioning**         | Manage and maintain multiple API versions.                   |
