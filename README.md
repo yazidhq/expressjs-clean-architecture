@@ -68,7 +68,7 @@ This boilerplate is designed with a modular structure, environment configuration
 
 ## Running the Application
 
-- Start in development mode (with nodemon or similar):
+- Start in development mode:
 
   ```bash
   npm run start:dev
@@ -78,6 +78,40 @@ This boilerplate is designed with a modular structure, environment configuration
 
   ```bash
   npm start
+  ```
+
+## Running the Application with Docker
+
+### Development Mode
+
+- Build and start containers:
+
+  ```bash
+  npm run docker:build:dev
+  npm run docker:up:dev
+  ```
+
+- Stop containers (with or without removing volumes):
+
+  ```bash
+  npm run docker:down:dev:clean
+  npm run docker:down:dev
+  ```
+
+### Production Mode
+
+- Build and start containers:
+
+  ```bash
+  npm run docker:build
+  npm run docker:up
+  ```
+
+- Stop containers (with or without removing volumes):
+
+  ```bash
+  npm run docker:down:clean
+  npm run docker:down
   ```
 
 ---
