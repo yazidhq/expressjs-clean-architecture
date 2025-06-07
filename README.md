@@ -1,7 +1,9 @@
 # ExpressJS Boilerplate
 
-[![License](https://img.shields.io/badge/license-MIT-blue)]()
-[![Node Version](https://img.shields.io/badge/node-%3E%3D14-brightgreen)]()
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D14-brightgreen?logo=node.js)](https://nodejs.org/)
+[![npm Version](https://img.shields.io/badge/npm-%3E%3D6-orange?logo=npm)](https://www.npmjs.com/)
+[![Docker](https://img.shields.io/badge/docker-%3E%3D20.10-blue?logo=docker)](https://www.docker.com/)
 
 ## Introduction
 
