@@ -22,6 +22,8 @@ This boilerplate is designed with a modular structure, environment configuration
 - Middleware and centralized error handling
 - Integrated logging system
 - API documentation with Swagger
+- Audit Logs for monitoring
+- Dockerize for containerization
 
 ---
 
