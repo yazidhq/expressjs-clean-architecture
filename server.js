@@ -13,5 +13,5 @@ const PORT = process.env.APP_PORT || 3000;
 
 app.listen(PORT, () => {
   const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
-  logger.info(`Server running in ${process.env.NODE_ENV} mode at ${APP_URL}`);
+  logger.info(`Server running in ${process.env.NODE_ENV} mode at ${APP_URL}:${PORT}`);
 });
