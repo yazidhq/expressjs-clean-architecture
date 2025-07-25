@@ -54,6 +54,20 @@ expressjs-boilerplate/
 
 ---
 
+## Features
+
+- Modular folder structure for maintainability
+- Environment configuration for multiple environments (development, production)
+- Sequelize ORM for MySQL/PostgreSQL support
+- Middleware and centralized error handling
+- Integrated logging system
+- API documentation with Swagger
+- Audit Logs for monitoring
+- Dockerize for containerization
+- Caching data with Redis
+
+---
+
 ## Installation
 
 1. Clone the repository:
@@ -139,25 +153,6 @@ expressjs-boilerplate/
 
 ---
 
-## Environment Configuration
-
-Place your database, app port, and other configurations inside `.env`.
-
----
-
-## Features
-
-- Modular folder structure for maintainability
-- Environment configuration for multiple environments (development, production)
-- Sequelize ORM for MySQL/PostgreSQL support
-- Middleware and centralized error handling
-- Integrated logging system
-- API documentation with Swagger
-- Audit Logs for monitoring
-- Dockerize for containerization
-
----
-
 ## API Documentation with Swagger
 
 This project integrates **Swagger** via **apidocs** to provide interactive API documentation.
@@ -171,6 +166,37 @@ This project integrates **Swagger** via **apidocs** to provide interactive API d
 - The Swagger JSON definition is automatically generated based on your route annotations and configurations.
 
 - Use this interface to explore all available endpoints, request parameters, and response schemas.
+
+---
+
+## Redis Utility Usage
+
+First, make sure to import the Redis utility: const cache = require("./path/to/cache.util");
+
+- get(key): Retrieve value by key
+
+  ```
+  const data = await cache.get("user:999");
+  ```
+
+- set(key, value, ttl?): Store value with optional TTL (in seconds)
+
+  ```
+  await cache.set("user:999", { name: "John" }, 120);
+  ```
+
+- del(key): Delete one or multiple keys
+
+  ```
+  await cache.del("user:999"); // single key
+  await cache.del(["user:999", "user:124"]); // multiple keys
+  ```
+
+- clearCachePrefix(prefix): Delete all keys starting with a given prefix
+
+  ```
+  await cache.clearCachePrefix("user:");
+  ```
 
 ---
 
@@ -197,23 +223,7 @@ This section provides guidance on how to use query filter parameters in your API
 
 ## Usage
 
-The "Usage" section provides instructions on how to utilize the features of the ExpressJS Boilerplate, including setting up routes, managing database models, implementing middleware, and using the authentication system. Follow these guidelines to quickly start building and customizing your web application.
-
-### Creating Routes
-
-- Define your API routes in the `src/interface/routes` directory.
-
-### Database Models
-
-- Create your database models in the `src/infrastructure/database/models` directory using Sequelize.
-
-### Middleware
-
-- Add custom middleware in the `src/interface/middleware` directory for request processing.
-
-### Logging
-
-- Check the `src/logs` directory for application logs.
+The "Usage" section provides instructions on how to utilize the features of the ExpressJS Boilerplate, including setting up routes, managing database models, implementing middleware, and others. Follow these guidelines to quickly start building and customizing your application.
 
 ### Domain Layer Structure
 
@@ -234,6 +244,10 @@ The "Usage" section provides instructions on how to utilize the features of the 
 - **Middleware**: Custom middleware located in `src/interface/middleware`.
 - **Routes**: API route definitions located in `src/interface/routes`.
 - **Validators**: Request data validation located in `src/interface/validators`.
+
+### Logging
+
+- Check the `src/logs` directory for application logs.
 
 ---
 
