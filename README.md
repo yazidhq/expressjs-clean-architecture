@@ -282,7 +282,6 @@ Features planned for future releases:
 | **Jobs / Queue**           | Background processing for async tasks.                       |
 | **Rate & Usage Analytics** | Track API usage and performance metrics.                     |
 | **WebSocket/Realtime**     | Enable real-time data via WebSocket or services like Pusher. |
-| **Caching Layer**          | Use Redis or in-memory cache to improve performance.         |
 | **Testing**                | Unit and integration tests for code reliability.             |
 | **Code Linting & Hooks**   | Enforce code standards via linting and git hooks.            |
 | **CI/CD**                  | Automated build, test, and deployment pipelines.             |
