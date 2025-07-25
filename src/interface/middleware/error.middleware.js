@@ -1,4 +1,5 @@
 const AppError = require("../../shared/utils/appError.util");
+const logger = require("../../shared/utils/logger.util");
 
 const sendErrorDev = (err, res) => {
   const statusCode = err.statusCode || 500;
@@ -6,11 +7,7 @@ const sendErrorDev = (err, res) => {
   const message = err.message;
   const stack = err.stack;
 
-  return res.status(statusCode).json({
-    status,
-    message,
-    stack,
-  });
+  return res.status(statusCode).json({ status, message, stack });
 };
 
 const sendErrorProd = (err, res) => {
@@ -32,12 +29,17 @@ const sendErrorProd = (err, res) => {
 };
 
 const globalErrorHandler = (err, req, res, next) => {
+  logger.error(`[${req.method}] ${req.originalUrl} - ${err.message}`);
+  logger.error(err.stack);
+
   if (err.name === "SequelizeValidationError") {
     err = new AppError(err.errors[0].message, 400);
   }
+
   if (err.name === "SequelizeUniqueConstraintError") {
     err = new AppError(err.errors[0].message, 400);
   }
+
   if (process.env.NODE_ENV === "development") {
     return sendErrorDev(err, res);
   }
