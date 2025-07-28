@@ -1,6 +1,6 @@
 "use strict";
 const { DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const AppError = require("../../../shared/utils/appError.util");
 
 module.exports = (sequelize) => {

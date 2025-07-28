@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const parseExpires = require("../../shared/utils/times.util");
 
 module.exports = (userRepository, refreshTokenRepository) => {
