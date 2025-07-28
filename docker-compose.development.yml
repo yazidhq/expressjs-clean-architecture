@@ -15,6 +15,11 @@ services:
     networks:
       - express_network
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
 
   app:
     container_name: express-starter
@@ -31,6 +36,11 @@ services:
     networks:
       - express_network
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
     depends_on:
       - db
 
