@@ -1,15 +1,38 @@
 version: "3.8"
 
 services:
+  db:
+    container_name: postgres
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db_express_starter
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - express_network
+    restart: always
+
   app:
+    container_name: express-starter
+    build:
+      context: .
+      dockerfile: Dockerfile
     env_file:
       - .env.development
     ports:
       - "3000:3000"
     volumes:
-      - ./src:/app/src
-      - ./package.json:/app/package.json
+      - .:/app
+    working_dir: /app
+    networks:
+      - express_network
+    restart: always
+    depends_on:
+      - db
 
-  mysql:
-    ports:
-      - "3306:3306"
+networks:
+  express_network:

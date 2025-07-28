@@ -8,3 +8,6 @@ src/logs/error.log
 .env
 .env.development
 .env.production
+
+# data
+data
