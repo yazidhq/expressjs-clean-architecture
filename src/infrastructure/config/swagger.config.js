@@ -11,6 +11,9 @@ const options = {
       {
         url: `${process.env.APP_URL}:${process.env.APP_PORT}`,
       },
+      {
+        url: `http://localhost:${process.env.APP_PORT}`,
+      },
     ],
     components: {
       securitySchemes: {
