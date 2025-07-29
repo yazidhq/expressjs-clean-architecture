@@ -1,6 +1,6 @@
 const UserRepositoryImpl = require("../infrastructures/repositories/user.repository.impl");
 
-const createUserUsecase = require("../domain/usecases/user.usecase");
+const createUserUsecase = require("../applications/usecases/user.usecase");
 
 const userRepository = new UserRepositoryImpl();
 

@@ -21,11 +21,12 @@ expressjs-boilerplate/
 │
 ├── public/                 # Static files
 └── src/                    # Source files
+    ├── applications/           # Application layer
+    │   └── usecases/           # Business logic use cases
     ├── compositions/       # Composition logic
     ├── domain/             # Domain layer (entities, repositories, usecases)
     │   ├── entities/       # Core business entities
     │   ├── repositories/   # Data access logic
-    │   └── usecases/       # Business logic use cases
     ├── infrastructures/     # Infrastructure layer (config, database, repositories, services)
     │   ├── config/         # Configuration files
     │   ├── database/       # Database management
@@ -226,11 +227,14 @@ This section provides guidance on how to use query filter parameters in your API
 
 The "Usage" section provides instructions on how to utilize the features of the ExpressJS Boilerplate, including setting up routes, managing database models, implementing middleware, and others. Follow these guidelines to quickly start building and customizing your application.
 
+### Application Layer Structure
+
+- **Use Cases**: Business logic defined in `src/domain/usecases`.
+
 ### Domain Layer Structure
 
 - **Entities**: Core business objects defined in `src/domain/entities`.
 - **Repositories**: Data access logic defined in `src/domain/repositories`.
-- **Use Cases**: Business logic defined in `src/domain/usecases`.
 
 ### Infrastructure Layer Structure
 

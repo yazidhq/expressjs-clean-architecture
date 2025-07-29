@@ -1,5 +1,5 @@
 const AppError = require("../../shared/utils/appError.util");
-const User = require("../entities/user.entity");
+const User = require("../../domain/entities/user.entity");
 
 module.exports = (userRepository) => ({
   createUser: async (data) => {
