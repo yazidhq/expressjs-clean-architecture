@@ -5,14 +5,7 @@
  *   description: User Managements
  */
 
-const {
-  createUser,
-  getUsers,
-  truncateUsers,
-  getUserById,
-  updateUser,
-  deleteUser,
-} = require("../controllers/user.controller");
+const { createUser, getUsers, truncateUsers, getUserById, updateUser, deleteUser } = require("../controllers/user.controller");
 
 const { authentication, restrictTo } = require("../middleware/authentication.middleware");
 const auditLog = require("../middleware/auditLog.middleware");
@@ -56,10 +49,10 @@ router
    *                 example: michael@mail.com
    *               password:
    *                 type: string
-   *                 example: 123456
+   *                 example: 12345678
    *               confirmPassword:
    *                 type: string
-   *                 example: 123456
+   *                 example: 12345678
    *     responses:
    *       201:
    *         description: Success
