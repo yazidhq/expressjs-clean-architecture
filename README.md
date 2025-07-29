@@ -65,6 +65,7 @@ expressjs-boilerplate/
 - Audit Logs for monitoring
 - Dockerize for containerization
 - Caching data with Redis
+- Health check monitoring
 
 ---
 
@@ -278,7 +279,6 @@ Features planned for future releases:
 | Feature                    | Description                                                  |
 | -------------------------- | ------------------------------------------------------------ |
 | **Session Management**     | Handle user sessions and authentication state.               |
-| **Health Checks**          | Endpoint to monitor service status.                          |
 | **Jobs / Queue**           | Background processing for async tasks.                       |
 | **Rate & Usage Analytics** | Track API usage and performance metrics.                     |
 | **WebSocket/Realtime**     | Enable real-time data via WebSocket or services like Pusher. |

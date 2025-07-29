@@ -35,6 +35,19 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "API" });
 });
 
+app.get("/health-check", (req, res) => {
+  const healthCheck = {
+    uptime: process.uptime(),
+    timestamp: Date.now(),
+  };
+
+  try {
+    res.status(200).json(healthCheck);
+  } catch (error) {
+    res.status(503).json(error.message);
+  }
+});
+
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpecs = require("./infrastructures/config/swagger.config");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
