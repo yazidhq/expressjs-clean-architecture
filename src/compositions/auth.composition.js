@@ -1,5 +1,5 @@
-const UserRepositoryImpl = require("../infrastructure/repositories/user.repository.impl");
-const RefreshTokenRepositoryImpl = require("../infrastructure/repositories/refreshToken.repository.impl");
+const UserRepositoryImpl = require("../infrastructures/repositories/user.repository.impl");
+const RefreshTokenRepositoryImpl = require("../infrastructures/repositories/refreshToken.repository.impl");
 
 const createAuthUsecase = require("../domain/usecases/auth.usecase");
 

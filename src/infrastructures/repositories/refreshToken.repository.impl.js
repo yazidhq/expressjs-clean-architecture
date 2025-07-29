@@ -1,4 +1,4 @@
-const db = require("../../infrastructure/database/models");
+const db = require("../../infrastructures/database/models");
 const RefreshToken = db.refresh_token;
 
 const RefreshTokenRepository = require("../../domain/repositories/refreshToken.repository");

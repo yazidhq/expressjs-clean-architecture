@@ -9,8 +9,8 @@ if (process.env.NODE_ENV === "production") {
 const path = require("path");
 
 module.exports = {
-  config: path.resolve("src/infrastructure/config", "db.config.js"),
-  "models-path": path.resolve("src/infrastructure/database", "models"),
-  "seeders-path": path.resolve("src/infrastructure/database", "seeders"),
-  "migrations-path": path.resolve("src/infrastructure/database", "migrations"),
+  config: path.resolve("src/infrastructures/config", "db.config.js"),
+  "models-path": path.resolve("src/infrastructures/database", "models"),
+  "seeders-path": path.resolve("src/infrastructures/database", "seeders"),
+  "migrations-path": path.resolve("src/infrastructures/database", "migrations"),
 };

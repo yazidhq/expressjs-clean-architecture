@@ -1,4 +1,4 @@
-const AuditLogImpl = require("../../infrastructure/repositories/auditLog.repository.impl");
+const AuditLogImpl = require("../../infrastructures/repositories/auditLog.repository.impl");
 
 const auditLog = (action, tableName) => (req, res, next) => {
   res.on("finish", async () => {

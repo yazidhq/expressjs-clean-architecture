@@ -6,9 +6,9 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const { glob } = require("glob");
 
-const corsOption = require("./interface/middleware/cors.middleware");
-const sanitizeGlobal = require("./interface/middleware/sanitize.middleware");
-const globalErrorHandler = require("./interface/middleware/error.middleware");
+const corsOption = require("./interfaces/middleware/cors.middleware");
+const sanitizeGlobal = require("./interfaces/middleware/sanitize.middleware");
+const globalErrorHandler = require("./interfaces/middleware/error.middleware");
 const logger = require("./shared/utils/logger.util");
 const AppError = require("./shared/utils/appError.util");
 const catchAsync = require("./shared/utils/catchAsync.util");
@@ -36,10 +36,10 @@ app.get("/", (req, res) => {
 });
 
 const swaggerUi = require("swagger-ui-express");
-const swaggerSpecs = require("./infrastructure/config/swagger.config");
+const swaggerSpecs = require("./infrastructures/config/swagger.config");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
-glob.sync("./src/interface/routes/*.js").forEach((file) => {
+glob.sync("./src/interfaces/routes/*.js").forEach((file) => {
   require(path.resolve(file))(app);
 });
 

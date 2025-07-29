@@ -1,4 +1,4 @@
-const db = require("../../infrastructure/database/models");
+const db = require("../../infrastructures/database/models");
 const AuditLog = db.audit_log;
 
 const AuditLogRepository = require("../../domain/repositories/auditLog.repository");

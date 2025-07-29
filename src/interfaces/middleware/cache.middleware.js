@@ -1,4 +1,4 @@
-const redis = require("../../infrastructure/config/redis.config");
+const redis = require("../../infrastructures/config/redis.config");
 
 const cacheMiddleware = async (req, res, next) => {
   const key = `cache:${req.originalUrl}`;

@@ -26,7 +26,7 @@ expressjs-boilerplate/
     │   ├── entities/       # Core business entities
     │   ├── repositories/   # Data access logic
     │   └── usecases/       # Business logic use cases
-    ├── infrastructure/     # Infrastructure layer (config, database, repositories, services)
+    ├── infrastructures/     # Infrastructure layer (config, database, repositories, services)
     │   ├── config/         # Configuration files
     │   ├── database/       # Database management
     │   │   ├── migrations/ # Database migrations
@@ -34,7 +34,7 @@ expressjs-boilerplate/
     │   │   └── seeders/    # Database seeders
     │   ├── repositories/   # Repository implementations
     │   └── services/       # Service layer for business logic
-    ├── interface/          # Interface layer (controllers, middleware, routes, validators)
+    ├── interfaces/          # Interface layer (controllers, middleware, routes, validators)
     │   ├── controllers/    # Request handling logic
     │   ├── middleware/     # Custom middleware
     │   ├── routes/         # API route definitions
@@ -233,17 +233,17 @@ The "Usage" section provides instructions on how to utilize the features of the 
 
 ### Infrastructure Layer Structure
 
-- **Config**: Configuration files located in `src/infrastructure/config`.
-- **Database**: Database management files located in `src/infrastructure/database`.
-- **Repositories**: Implementations of data access logic located in `src/infrastructure/repositories`.
-- **Services**: Business logic services located in `src/infrastructure/services`.
+- **Config**: Configuration files located in `src/infrastructures/config`.
+- **Database**: Database management files located in `src/infrastructures/database`.
+- **Repositories**: Implementations of data access logic located in `src/infrastructures/repositories`.
+- **Services**: Business logic services located in `src/infrastructures/services`.
 
 ### Interface Layer Structure
 
-- **Controllers**: Request handling logic located in `src/interface/controllers`.
-- **Middleware**: Custom middleware located in `src/interface/middleware`.
-- **Routes**: API route definitions located in `src/interface/routes`.
-- **Validators**: Request data validation located in `src/interface/validators`.
+- **Controllers**: Request handling logic located in `src/interfaces/controllers`.
+- **Middleware**: Custom middleware located in `src/interfaces/middleware`.
+- **Routes**: API route definitions located in `src/interfaces/routes`.
+- **Validators**: Request data validation located in `src/interfaces/validators`.
 
 ### Logging
 

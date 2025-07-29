@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const AppError = require("../../shared/utils/appError.util");
 const catchAsync = require("../../shared/utils/catchAsync.util");
-const db = require("../../infrastructure/database/models");
+const db = require("../../infrastructures/database/models");
 
 const User = db.user;
 

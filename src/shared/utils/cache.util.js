@@ -1,4 +1,4 @@
-const redis = require("../../infrastructure/config/redis.config");
+const redis = require("../../infrastructures/config/redis.config");
 
 const DEFAULT_TTL = parseInt(process.env.REDIS_TTL || "60");
 const KEY_PREFIX = process.env.REDIS_PREFIX || "myapp:";
