@@ -2,7 +2,10 @@ class UserRepository {
   async create(userEntity) {
     throw new Error("Not implemented");
   }
-  async findAndCount(where, include, limit, offset) {
+  async findAndCount(options) {
+    throw new Error("Not implemented");
+  }
+  async getFiltered(query) {
     throw new Error("Not implemented");
   }
   async findById(id) {

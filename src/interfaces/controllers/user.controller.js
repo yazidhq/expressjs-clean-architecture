@@ -1,5 +1,4 @@
 const catchAsync = require("../../shared/utils/catchAsync.util");
-const helper = require("../../shared/utils/helper.util");
 const userUseCase = require("../../compositions/user.composition");
 const { sendPaginated, sendSuccess } = require("../../shared/utils/response.util");
 
@@ -17,14 +16,9 @@ const createUser = catchAsync(async (req, res) => {
 });
 
 const getUsers = catchAsync(async (req, res) => {
-  const { page, size, filter } = req.query;
-  const { limit, offset, page: currentPage } = helper.getPagination(page, size);
-  const { where, include } = helper.buildFilter(filter);
+  const result = await userUseCase.getUsers(req.query);
 
-  const { rows, count } = await userUseCase.getUsers(where, include, limit, offset);
-  const response = helper.getPagingData(rows, count, currentPage, limit);
-
-  return sendPaginated(res, "Users fetched successfully", response);
+  return sendPaginated(res, "Users fetched successfully", result);
 });
 
 const getUserById = catchAsync(async (req, res) => {

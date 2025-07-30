@@ -204,22 +204,80 @@ First, make sure to import the Redis utility: const cache = require("./path/to/c
 
 ## Query Filter Parameters
 
-This section provides guidance on how to use query filter parameters in your API requests to filter data based on specific criteria.
+This endpoint supports various query parameters for filtering, sorting, pagination, and global search.
 
-### Filter Parameter Conditions
+### Query Parameters
 
-| No  | Condition                 | Description                         | Example JSON                                                | Explanation                                                      |
-| --- | ------------------------- | ----------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------- |
-| 1   | **Not Equal**             | Excludes results that match         | `{ "role": { "ne": "user" } }`                              | Excludes data with role equal to 'user'.                         |
-| 2   | **Greater Than**          | Includes values greater than        | `{ "age": { "gt": 25 } }`                                   | Includes data with age > 25.                                     |
-| 3   | **Greater Than or Equal** | Includes values ≥                   | `{ "salary": { "gte": 5000 } }`                             | Includes data with salary ≥ 5000.                                |
-| 4   | **Less Than**             | Includes values less than           | `{ "score": { "lt": 100 } }`                                | Includes data with score < 100.                                  |
-| 5   | **Less Than or Equal**    | Includes values ≤                   | `{ "rating": { "lte": 80 } }`                               | Includes data with rating ≤ 80.                                  |
-| 6   | **Like**                  | Matches a pattern (substring)       | `{ "username": { "like": "john" } }`                        | Includes data with usernames containing 'john'.                  |
-| 7   | **In**                    | Matches any of the specified values | `{ "status": { "in": ["active", "pending"] } }`             | Includes data with status 'active' or 'pending'.                 |
-| 8   | **Default String Match**  | Substring match                     | `{ "email": "example" }`                                    | Includes data with emails containing 'example'.                  |
-| 9   | **OR Condition**          | Combines multiple conditions OR     | `{ "or": [{ "country": "USA" }, { "country": "Canada" }] }` | Includes data from either 'USA' or 'Canada'.                     |
-| 10  | **Relation Filter**       | Filter based on nested fields       | `{ "profile.bio": { "like": "developer" } }`                | Includes data where the nested 'bio' field contains 'developer'. |
+| Parameter        | Description                                                                              | Example                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| filter           | Flexible filter, supports operators and relations. Format: `filter=field,operator,value` | `filter=username,=,john`<br>`filter=profile.name,like,John`<br>`filter=createdAt,between,2024-01-01\|2024-12-31` |
+| limit            | Number of items per page                                                                 | `limit=10`                                                                                                       |
+| page             | Page number                                                                              | `page=2`                                                                                                         |
+| sort             | Column name for sorting (can be relation)                                                | `sort=username`<br>`sort=profile.name`                                                                           |
+| order            | Sort direction (`asc` or `desc`)                                                         | `order=desc`                                                                                                     |
+| search           | Global search in fields defined in backend (`concatFields`)                              | `search=john`                                                                                                    |
+| [field]          | Direct filter by column                                                                  | `username=john`<br>`email=abc@xyz.com`                                                                           |
+| [relation.field] | Direct filter in relation (if relation is included)                                      | `profile.name=John`                                                                                              |
+
+### Supported Operators in `filter`
+
+- `=` : equal
+- `!=` : not equal
+- `>` : greater than
+- `>=` : greater than or equal
+- `<` : less than
+- `<=` : less than or equal
+- `like` : contains
+- `notLike` : does not contain
+- `in` : one of (separate values with `|`)
+- `notIn` : not one of
+- `between` : between two values (separate with `|`)
+- `notBetween` : outside two values
+- `is`, `not`, `regexp`, `notRegexp`, `iRegexp`, `notIRegexp`
+
+### Usage Examples
+
+#### Column Filter
+
+```
+GET /api/user?username=john&email=abc@xyz.com
+```
+
+#### Relation Filter
+
+```
+GET /api/user?filter=profile.name,=,John
+```
+
+#### Range Filter
+
+```
+GET /api/user?filter=createdAt,between,2024-01-01|2024-12-31
+```
+
+#### Sort and Order
+
+```
+GET /api/user?sort=username&order=desc
+```
+
+#### Pagination
+
+```
+GET /api/user?limit=5&page=2
+```
+
+#### Global Search
+
+```
+GET /api/user?search=john
+```
+
+### Notes
+
+- For relation filters, make sure the relation is included in the controller.
+- For global search, the fields to be searched are defined in the backend (`concatFields`).
+- All parameters can be combined as needed.
 
 ---
 

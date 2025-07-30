@@ -10,7 +10,11 @@ const sendPaginated = (res, message = "Success", pagination = {}, statusCode = 2
   return res.status(statusCode).json({
     status: "success",
     message,
-    ...pagination,
+    page: pagination.page,
+    totalPages: pagination.totalPages,
+    dataCount: pagination.count,
+    limit: pagination.limit,
+    data: pagination.data,
   });
 };
 

@@ -1,107 +1,117 @@
 const { Op } = require("sequelize");
 
-const getPagination = (page = 1, size = 10) => {
-  const limit = size > 0 ? +size : 10;
-  const offset = page > 1 ? (page - 1) * limit : 0;
-  return { limit, offset, page: +page, size: limit };
-};
+const getFiltered = async ({ model, query, include = [], defaultLimit = 10, concatFields = [] }) => {
+  const page = parseInt(query.page) || 1;
+  const limit = parseInt(query.limit) || defaultLimit;
+  const offset = (page - 1) * limit;
 
-const getPagingData = (data, count, page, limit) => {
-  const totalItems = count;
-  const totalPages = Math.ceil(totalItems / limit);
-  const currentPage = page;
-  return {
-    totalItems,
-    totalPages,
-    currentPage,
-    data,
-  };
-};
+  const where = {};
+  const includeNested = [...include];
 
-const buildFilter = (filterJSON) => {
-  if (!filterJSON) return { where: {}, include: [] };
-
-  let filterObj = filterJSON;
-  if (typeof filterJSON === "string") {
-    try {
-      filterObj = JSON.parse(filterJSON);
-    } catch (err) {
-      throw new Error("Invalid JSON format for filter query");
+  const setNestedWhere = (includeArr, pathArr, filterObj) => {
+    if (!pathArr.length) return;
+    const rel = pathArr[0];
+    let found = includeArr.find((inc) => inc.as === rel || inc.model?.name === rel);
+    if (!found) {
+      found = { association: rel, where: {} };
+      includeArr.push(found);
     }
-  }
+    if (pathArr.length === 1) {
+      found.where = { ...found.where, ...filterObj };
+    } else {
+      if (!found.include) found.include = [];
+      setNestedWhere(found.include, pathArr.slice(1), filterObj);
+    }
+  };
 
-  const includeMap = {};
-  const parseCondition = (key, value) => {
-    if (typeof value === "object" && !Array.isArray(value)) {
-      const condition = {};
-      for (const [opKey, opValue] of Object.entries(value)) {
-        switch (opKey) {
-          case "eq":
-            condition[Op.eq] = opValue;
-            break;
-          case "ne":
-            condition[Op.ne] = opValue;
-            break;
-          case "gt":
-            condition[Op.gt] = opValue;
-            break;
-          case "gte":
-            condition[Op.gte] = opValue;
-            break;
-          case "lt":
-            condition[Op.lt] = opValue;
-            break;
-          case "lte":
-            condition[Op.lte] = opValue;
-            break;
-          case "like":
-            condition[Op.like] = `%${opValue}%`;
-            break;
-          case "in":
-            condition[Op.in] = Array.isArray(opValue) ? opValue : [opValue];
-            break;
-          default:
-            throw new Error(`Unsupported operator: ${opKey}`);
+  if (query.filter) {
+    const filters = Array.isArray(query.filter) ? query.filter : [query.filter];
+    filters.forEach((filterStr) => {
+      const [field, operator, value] = filterStr.split(",");
+      if (field && operator && value !== undefined) {
+        const opMap = {
+          "=": Op.eq,
+          "!=": Op.ne,
+          ">": Op.gt,
+          ">=": Op.gte,
+          "<": Op.lt,
+          "<=": Op.lte,
+          like: Op.like,
+          notLike: Op.notLike,
+          in: Op.in,
+          notIn: Op.notIn,
+          between: Op.between,
+          notBetween: Op.notBetween,
+          is: Op.is,
+          not: Op.not,
+          regexp: Op.regexp,
+          notRegexp: Op.notRegexp,
+          iRegexp: Op.iRegexp,
+          notIRegexp: Op.notIRegexp,
+        };
+
+        const fieldName = field.split(".").pop();
+        const filterObj = {};
+        if (["like", "notLike"].includes(operator)) {
+          filterObj[fieldName] = { [opMap[operator]]: `%${value}%` };
+        } else if (["in", "notIn", "between", "notBetween"].includes(operator)) {
+          filterObj[fieldName] = { [opMap[operator]]: value.split("|") };
+        } else {
+          filterObj[fieldName] = { [opMap[operator] || Op.eq]: value };
+        }
+
+        if (field.includes(".")) {
+          const pathArr = field.split(".");
+          setNestedWhere(includeNested, pathArr.slice(0, -1), filterObj);
+        } else {
+          where[field] = filterObj[field];
         }
       }
-      return condition;
+    });
+  }
+
+  Object.keys(query).forEach((key) => {
+    if (["page", "limit", "sort", "order", "search", "filter"].includes(key)) return;
+    if (key.includes(".")) {
+      const pathArr = key.split(".");
+      const filterObj = {};
+      filterObj[pathArr[pathArr.length - 1]] = query[key];
+      setNestedWhere(includeNested, pathArr.slice(0, -1), filterObj);
     } else {
-      return { [Op.like]: `%${value}%` };
+      where[key] = query[key];
     }
+  });
+
+  if (query.search && concatFields.length > 0) {
+    where[Op.or] = concatFields.map((field) => ({
+      [field]: { [Op.like]: `%${query.search}%` },
+    }));
+  }
+
+  const allowedSortFields = ["name", "username", "email", "createdAt"];
+  const order = [];
+
+  if (query.sort && allowedSortFields.includes(query.sort)) {
+    order.push([query.sort, query.order?.toUpperCase() === "DESC" ? "DESC" : "ASC"]);
+  }
+
+  const options = {
+    where,
+    include: includeNested,
+    limit,
+    offset,
+    order,
   };
 
-  const parseWhere = (obj) => {
-    const result = {};
+  const { rows, count } = await model.findAndCountAll(options);
 
-    for (const [key, value] of Object.entries(obj)) {
-      if (value === undefined || value === null || value === "") continue;
-
-      if (key.toLowerCase() === "or" && Array.isArray(value)) {
-        result[Op.or] = value.map((item) => parseWhere(item));
-      } else if (key.includes(".")) {
-        const [relation, ...rest] = key.split(".");
-        const col = rest.join(".");
-        if (!includeMap[relation]) includeMap[relation] = {};
-        Object.assign(includeMap[relation], {
-          [col]: parseCondition(col, value),
-        });
-      } else {
-        result[key] = parseCondition(key, value);
-      }
-    }
-
-    return result;
+  return {
+    data: rows,
+    count,
+    page,
+    totalPages: Math.ceil(count / limit),
+    limit: parseInt(query.limit),
   };
-
-  const finalWhere = parseWhere(filterObj);
-
-  const include = Object.entries(includeMap).map(([relation, relWhere]) => ({
-    association: relation,
-    where: relWhere,
-    required: true,
-  }));
-
-  return { where: finalWhere, include };
 };
 
-module.exports = { getPagination, getPagingData, buildFilter };
+module.exports = { getFiltered };

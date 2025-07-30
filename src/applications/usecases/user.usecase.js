@@ -14,11 +14,14 @@ module.exports = (userRepository) => ({
     return created;
   },
 
-  getUsers: async (where, include, limit, offset) => {
-    const { rows, count } = await userRepository.findAndCount(where, include, limit, offset);
-    if (!rows || rows.length === 0) throw new AppError("No users found", 404);
+  getUsers: async (query) => {
+    const result = await userRepository.getFiltered(query);
 
-    return { rows, count };
+    if (!result.data || result.data.length === 0) {
+      throw new AppError("No users found", 400);
+    }
+
+    return result;
   },
 
   getUserById: async (id) => {

@@ -77,7 +77,7 @@ router
    *           default: 1
    *         description: Page number for pagination
    *       - in: query
-   *         name: size
+   *         name: limit
    *         schema:
    *           type: integer
    *           default: 10
@@ -86,10 +86,30 @@ router
    *         name: filter
    *         schema:
    *           type: string
-   *         description: Filter string for searching users (JSON)
+   *           example: createdAt,between,2025-01-01|2025-12-31
+   *         description: Filtering in format field,operator,value (use `|` to separate multiple values for `in`, `between`, etc)
+   *       - in: query
+   *         name: sort
+   *         schema:
+   *           type: string
+   *           example: createdAt
+   *         description: Field name to sort the result by
+   *       - in: query
+   *         name: order
+   *         schema:
+   *           type: string
+   *           enum: [asc, desc]
+   *           default: asc
+   *         description: Sort order (asc or desc)
+   *       - in: query
+   *         name: search
+   *         schema:
+   *           type: string
+   *           example: mic
+   *         description: Global search term that applies to multiple fields
    *     responses:
    *       200:
-   *         description: User lists
+   *         description: List of users returned successfully
    */
   .get(authentication, restrictTo("superadmin"), getUsers)
 
