@@ -2,7 +2,7 @@ class AuditLogRepository {
   async create(auditLogEntity) {
     throw new Error("Not implemented");
   }
-  async findAndCount(where, include, limit, offset) {
+  async findAndCount(options) {
     throw new Error("Not implemented");
   }
   async findById(id) {

@@ -2,7 +2,7 @@ class RefreshTokenRepository {
   async create(refreshTokenEntity) {
     throw new Error("Not implemented");
   }
-  async findAndCount(where, include, limit, offset) {
+  async findAndCount(option) {
     throw new Error("Not implemented");
   }
   async findById(id) {

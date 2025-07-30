@@ -8,13 +8,8 @@ class AuditLogImpl extends AuditLogRepository {
     return await AuditLog.create(auditLogEntity);
   }
 
-  async findAndCount(where, include, limit, offset) {
-    return await AuditLog.findAndCount({
-      where,
-      include,
-      limit,
-      offset,
-    });
+  async findAndCount(options) {
+    return await AuditLog.findAndCountAll(options);
   }
 
   async findById(id) {

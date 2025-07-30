@@ -1,4 +1,4 @@
-const AuditLogImpl = require("../../infrastructures/repositories/auditLog.repository.impl");
+const AuditLog = require("../../infrastructures/repositories/auditLog.repository.impl");
 
 const auditLog = (action, tableName) => (req, res, next) => {
   res.on("finish", async () => {
@@ -7,7 +7,7 @@ const auditLog = (action, tableName) => (req, res, next) => {
     if (!recordId && action !== "truncateUsers") return;
 
     try {
-      await AuditLogImpl.create({
+      await AuditLog.create({
         userId: req.user?.id || null,
         ipAddress: req.ip,
         userAgent: req.headers["user-agent"],

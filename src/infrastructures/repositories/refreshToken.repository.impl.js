@@ -8,13 +8,8 @@ class RefreshTokenImpl extends RefreshTokenRepository {
     return await RefreshToken.create(refreshTokenEntity);
   }
 
-  async findAndCount(where, include, limit, offset) {
-    return await RefreshToken.findAndCountAll({
-      where,
-      include,
-      limit,
-      offset,
-    });
+  async findAndCount(option) {
+    return await RefreshToken.findAndCountAll(option);
   }
 
   async findById(id) {

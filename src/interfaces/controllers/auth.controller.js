@@ -2,7 +2,7 @@ const catchAsync = require("../../shared/utils/catchAsync.util");
 const authUsecases = require("../../compositions/auth.composition");
 const parseExpires = require("../../shared/utils/times.util");
 
-const signUp = catchAsync(async (req, res, next) => {
+const signUp = catchAsync(async (req, res) => {
   const { result, accessToken, refreshToken } = await authUsecases.signUp(req.body);
 
   res.cookie("refreshToken", refreshToken, {
@@ -29,7 +29,7 @@ const signUp = catchAsync(async (req, res, next) => {
   });
 });
 
-const signIn = catchAsync(async (req, res, next) => {
+const signIn = catchAsync(async (req, res) => {
   const { accessToken, refreshToken, user } = await authUsecases.signIn(req.body);
 
   res.cookie("refreshToken", refreshToken, {
@@ -54,7 +54,7 @@ const signIn = catchAsync(async (req, res, next) => {
   });
 });
 
-const refreshToken = catchAsync(async (req, res, next) => {
+const refreshToken = catchAsync(async (req, res) => {
   const token = req.cookies.refreshToken;
 
   const { newAccessToken, newRefreshToken } = await authUsecases.verifyRefreshToken(token);
@@ -72,7 +72,7 @@ const refreshToken = catchAsync(async (req, res, next) => {
   });
 });
 
-const logout = catchAsync(async (req, res, next) => {
+const logout = catchAsync(async (req, res) => {
   const token = req.cookies.refreshToken;
   const user = await authUsecases.logout(token);
 
