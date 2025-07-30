@@ -41,6 +41,7 @@ services:
         limits:
           cpus: "0.5"
           memory: 512M
+    command: ["npm", "run", "start:dev"]
     depends_on:
       - db
 

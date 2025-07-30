@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "start:dev": "nodemon server.js",
+    "start:dev": "nodemon --legacy-watch server.js",
     "docker:build": "docker-compose -f docker-compose.production.yml build",
     "docker:build:dev": "docker-compose -f docker-compose.development.yml build",
     "docker:up": "docker-compose -f docker-compose.production.yml up -d",
