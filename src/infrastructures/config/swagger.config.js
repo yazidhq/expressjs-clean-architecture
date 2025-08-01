@@ -12,7 +12,13 @@ const options = {
         url: `${process.env.APP_URL}:${process.env.APP_PORT}`,
       },
       {
+        url: `${process.env.APP_URL}`,
+      },
+      {
         url: `http://localhost:${process.env.APP_PORT}`,
+      },
+      {
+        url: `http://127.0.0.1:${process.env.APP_PORT}`,
       },
       {
         url: `http://127.0.0.1:${process.env.APP_PORT}`,
