@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const parseExpires = require("../../shared/utils/times.util");
+const AppError = require("../../shared/utils/appError.util");
 
 module.exports = (userRepository, refreshTokenRepository) => {
   const createAccessToken = (payload) => {
@@ -30,21 +31,21 @@ module.exports = (userRepository, refreshTokenRepository) => {
   return {
     signUp: async ({ role, username, email, password, confirmPassword }) => {
       if (!["user"].includes(role)) {
-        throw new Error("Invalid user type");
+        throw new AppError("Invalid user type", 400);
       }
 
       const userExists = await userRepository.findByUsername(username);
       if (userExists) {
-        throw new Error("Username already taken");
+        throw new AppError("Username already taken", 400);
       }
 
       const emailExists = await userRepository.findByEmail(email);
       if (emailExists) {
-        throw new Error("Email already registered");
+        throw new AppError("Email already registered", 400);
       }
 
       if (!password || !confirmPassword || password !== confirmPassword) {
-        throw new Error("Passwords do not match");
+        throw new AppError("Passwords do not match", 400);
       }
 
       const user = await userRepository.create({
@@ -69,12 +70,12 @@ module.exports = (userRepository, refreshTokenRepository) => {
 
     signIn: async ({ email, password }) => {
       if (!email || !password) {
-        throw new Error("Please provide email and password");
+        throw new AppError("Please provide email and password", 400);
       }
 
       const user = await userRepository.findByEmail(email);
       if (!user || !(await bcrypt.compare(password, user.password))) {
-        throw new Error("Incorrect email or password");
+        throw new AppError("Incorrect email or password", 400);
       }
 
       const accessToken = createAccessToken({ id: user.id, role: user.role });
@@ -86,22 +87,22 @@ module.exports = (userRepository, refreshTokenRepository) => {
     },
 
     verifyRefreshToken: async (token) => {
-      if (!token) throw new Error("Refresh token required");
+      if (!token) throw new AppError("Refresh token required", 400);
 
       const storedToken = await refreshTokenRepository.findByToken(token);
       if (!storedToken || storedToken.expiresAt < new Date()) {
-        throw new Error("Token expired or not found");
+        throw new AppError("Token expired or not found", 400);
       }
 
       let decoded;
       try {
         decoded = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
       } catch (err) {
-        throw new Error("Invalid refresh token");
+        throw new AppError("Invalid refresh token", 400);
       }
 
       const user = await userRepository.findById(decoded.id);
-      if (!user) throw new Error("User not found");
+      if (!user) throw new AppError("User not found", 400);
 
       await storedToken.destroy();
 

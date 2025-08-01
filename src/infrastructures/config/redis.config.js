@@ -1,5 +1,6 @@
 const redis = require("redis");
 const logger = require("../../shared/utils/logger.util");
+const AppError = require("../../shared/utils/appError.util");
 
 const client = redis.createClient({
   socket: {
@@ -19,7 +20,7 @@ client.on("connect", () => {
 
 (async () => {
   if (!process.env.REDIS_HOST || !process.env.REDIS_PORT) {
-    throw new Error("Missing REDIS_HOST or REDIS_PORT in environment variables.");
+    throw new AppError("Missing REDIS_HOST or REDIS_PORT in environment variables.", 500);
   }
 
   try {
