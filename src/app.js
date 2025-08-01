@@ -16,13 +16,26 @@ const catchAsync = require("./shared/utils/catchAsync.util");
 const app = express();
 
 app.use(cors(corsOption));
-app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(sanitizeGlobal);
 app.use(compression());
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https:"],
+        imgSrc: ["'self'", "data:", "https:"],
+        objectSrc: ["'none'"],
+      },
+    },
+  })
+);
 
 app.use((req, res, next) => {
   res.on("finish", () => {
