@@ -1,6 +1,7 @@
 const catchAsync = require("../../shared/utils/catchAsync.util");
 const authUsecases = require("../../compositions/auth.composition");
 const parseExpires = require("../../shared/utils/times.util");
+const { sendSuccess } = require("../../shared/utils/response.util");
 
 const signUp = catchAsync(async (req, res) => {
   const { result, accessToken, refreshToken } = await authUsecases.signUp(req.body);
@@ -22,11 +23,8 @@ const signUp = catchAsync(async (req, res) => {
     },
   };
 
-  res.status(201).json({
-    status: "success",
-    data: result,
-    token: accessToken,
-  });
+  const data = { result, accessToken };
+  return sendSuccess(res, "SignUp succeessfully", data, 201);
 });
 
 const signIn = catchAsync(async (req, res) => {
@@ -48,10 +46,7 @@ const signIn = catchAsync(async (req, res) => {
     },
   };
 
-  res.status(200).json({
-    status: "success",
-    token: accessToken,
-  });
+  return sendSuccess(res, "SignIn succeessfully", accessToken);
 });
 
 const refreshToken = catchAsync(async (req, res) => {
@@ -66,10 +61,7 @@ const refreshToken = catchAsync(async (req, res) => {
     maxAge: parseExpires(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
-  res.status(200).json({
-    status: "success",
-    token: newAccessToken,
-  });
+  return sendSuccess(res, "Refresh token succeessfully", newAccessToken);
 });
 
 const logout = catchAsync(async (req, res) => {
@@ -91,10 +83,7 @@ const logout = catchAsync(async (req, res) => {
     },
   };
 
-  res.status(200).json({
-    status: "success",
-    message: "Logged out successfully",
-  });
+  return sendSuccess(res, "Logged out succeessfully");
 });
 
 module.exports = { signUp, signIn, refreshToken, logout };

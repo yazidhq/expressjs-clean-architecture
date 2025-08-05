@@ -3,15 +3,8 @@ const cors = require("cors");
 const helmet = require("helmet");
 const compression = require("compression");
 const cookieParser = require("cookie-parser");
-const path = require("path");
-const { glob } = require("glob");
-
 const corsOption = require("./interfaces/middleware/cors.middleware");
 const sanitizeGlobal = require("./interfaces/middleware/sanitize.middleware");
-const globalErrorHandler = require("./interfaces/middleware/error.middleware");
-const logger = require("./shared/utils/logger.util");
-const AppError = require("./shared/utils/appError.util");
-const catchAsync = require("./shared/utils/catchAsync.util");
 
 const app = express();
 
@@ -37,6 +30,7 @@ app.use(
   })
 );
 
+const logger = require("./shared/utils/logger.util");
 app.use((req, res, next) => {
   res.on("finish", () => {
     logger.info(`${req.method} ${req.originalUrl} - ${res.statusCode}`);
@@ -61,14 +55,18 @@ app.get("/health-check", (req, res) => {
   }
 });
 
-const swaggerUi = require("swagger-ui-express");
-const swaggerSpecs = require("./infrastructures/config/swagger.config");
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
-
+const { glob } = require("glob");
+const path = require("path");
 glob.sync("./src/interfaces/routes/*.js").forEach((file) => {
   require(path.resolve(file))(app);
 });
 
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpecs = require("./infrastructures/config/swagger.config");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+
+const catchAsync = require("./shared/utils/catchAsync.util");
+const AppError = require("./shared/utils/appError.util");
 app.use(
   "*",
   catchAsync(async (req, res, next) => {
@@ -78,6 +76,7 @@ app.use(
   })
 );
 
+const { globalErrorHandler } = require("./shared/utils/response.util");
 app.use(globalErrorHandler);
 
 module.exports = app;

@@ -25,7 +25,7 @@ const getUserById = catchAsync(async (req, res) => {
   const userId = req.params.id;
   const user = await userUseCase.getUserById(userId);
 
-  return sendSuccess(res, "User fetched successfully", user, 200);
+  return sendSuccess(res, "User fetched successfully", user);
 });
 
 const updateUser = catchAsync(async (req, res) => {
@@ -41,7 +41,7 @@ const updateUser = catchAsync(async (req, res) => {
     newValue: updated,
   };
 
-  return sendSuccess(res, "User updated successfully", updated, 200);
+  return sendSuccess(res, "User updated successfully", updated);
 });
 
 const deleteUser = catchAsync(async (req, res) => {
@@ -56,7 +56,7 @@ const deleteUser = catchAsync(async (req, res) => {
     newValue: null,
   };
 
-  return sendSuccess(res, "User deleted successfully", null, 200);
+  return sendSuccess(res, "User deleted successfully");
 });
 
 const truncateUsers = catchAsync(async (req, res) => {
@@ -68,7 +68,7 @@ const truncateUsers = catchAsync(async (req, res) => {
     newValue: null,
   };
 
-  return sendSuccess(res, "Data truncated successfully", null, 200);
+  return sendSuccess(res, "Data truncated successfully");
 });
 
 module.exports = { createUser, getUsers, getUserById, updateUser, deleteUser, truncateUsers };
